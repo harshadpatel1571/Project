@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Admin_Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Add_Catagory.aspx.cs" Inherits="Admin_Login" %>
 
 <!DOCTYPE html>
 
@@ -39,17 +39,19 @@
                     <div class="card-text">
                         <table class="table-responsive table-hover">
                             <tr>
-                                <td> Catagory Name </td>
-                                <td> <input type="text" id="txt_cat" class="form-control col-10"/></td>
+                                <td>Catagory Name </td>
+                                <td>
+                                    <input type="text" id="txt_cat" class="form-control col-10" /></td>
                             </tr>
                             <tr>
-                                <td> <button id="btn_add" class="btn btn-success col-md-12"> Save </button> </td>
+                                <td>
+                                    <button id="btn_add" class="btn btn-success col-md-12">Save </button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </div>
-
         </div>
     </form>
 </body>
