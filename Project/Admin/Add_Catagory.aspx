@@ -52,6 +52,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card border-primary col-12">
+                <div class="card-header">Add Catagory</div>
+                <div class="card-body col-12">
+                    <div class="card-text">
+                       <asp:GridView runat="server" ID="grd_demo">
+
+                       </asp:GridView>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>
