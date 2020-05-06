@@ -28,7 +28,7 @@
                     </div>
 
                     <!--logo start-->
-                    <a href="index.html" class="logo">Sauvrastra News <span class="lite">Admin</span></a>
+                    <a href="index.html" class="logo">Sauvrastra Mirror <span class="lite">Admin</span></a>
                     <!--logo end-->
 
 
@@ -37,7 +37,7 @@
                         <!-- notificatoin dropdown start-->
                         <ul class="nav pull-right top-menu">
 
-                            <!-- task notificatoin start -->
+                            <%--<!-- task notificatoin start -->
                             <li id="task_notificatoin_bar" class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="icon-task-l"></i>
@@ -231,7 +231,7 @@
                                         <a href="#">See all notifications</a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>--%>
                             <!-- alert notification end-->
                             <!-- user login dropdown start-->
                             <li class="dropdown">
@@ -239,7 +239,7 @@
                                     <span class="profile-ava">
                                         <img alt="" src="img/avatar1_small.jpg">
                                     </span>
-                                    <span class="username">Jenifer Smith</span>
+                                    <span class="username"><asp:Label runat="server" ID="lbl_username"></asp:Label> </span>
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu extended logout">
