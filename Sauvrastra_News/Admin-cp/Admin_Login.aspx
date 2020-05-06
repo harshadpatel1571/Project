@@ -4,13 +4,47 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+    <title>Sauvrastra News Admin</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/owl.carousel.css" rel="stylesheet" />
+    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/fullcalendar.css" />
+    <link href="css/widgets.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/xcharts.min.css" rel=" stylesheet" />
+    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+<body class="login-img3-body">
+    <div class="container">
+        <form class="login-form" runat="server" id="form1">
+            <div class="login-wrap">
+                <p class="login-img"><i class="icon_lock_alt"></i></p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
+                    <asp:TextBox runat="server" class="form-control" ID="txt_username" placeholder="Username" autofocus="true"></asp:TextBox>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                    <asp:TextBox runat="server" class="form-control" placeholder="Password" TextMode="Password" ID="txt_pass"></asp:TextBox>
+                </div>
+                <label class="checkbox">
+                    <%--<input type="checkbox" value="remember-me">
+                    Remember me--%>
+                <span class="pull-right"><a href="#">Forgot Password?</a></span>
+                </label>
+                <asp:button runat="server" class="btn btn-primary btn-lg btn-block" ID="btn_save" Text="Login"/>
+               <%-- <asp:button runat="server" class="btn btn-info btn-lg btn-block" ID="btn_cancel" Text="Login"/>
+                <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>--%>
+            </div>
+        </form>
     </div>
-    </form>
 </body>
 </html>
+

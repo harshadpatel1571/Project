@@ -6,9 +6,9 @@
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
-    <title>Sauvrastra &nbsp; News</title>
     <link href="style.css" rel="stylesheet" />
+    <title>Sauvrastra &nbsp; News</title>
+    
     <link rel="icon" href="img/core-img/favicon.ico" />
 </head>
 <body>
@@ -27,14 +27,9 @@
                                     </div>
 
                                     <div class="login-search-area d-flex align-items-center">
-
-                                        <div class="login d-flex">
-                                            <a href="#">Login</a>
-                                            <a href="#">Register</a>
-                                        </div>
-
+                                       
                                         <div class="search-form">
-                                            <input type="search" name="search" class="form-control" placeholder="Search" />
+                                            <input type="search" name="search" class="form-control" placeholder="Search to Headline" />
                                             <%-- <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>--%>
                                         </div>
                                     </div>
