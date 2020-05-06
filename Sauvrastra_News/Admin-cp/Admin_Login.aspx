@@ -35,11 +35,9 @@
                     <asp:TextBox runat="server" class="form-control" placeholder="Password" TextMode="Password" ID="txt_pass"></asp:TextBox>
                 </div>
                 <label class="checkbox">
-                    <%--<input type="checkbox" value="remember-me">
-                    Remember me--%>
                 <span class="pull-right"><a href="#">Forgot Password?</a></span>
                 </label>
-                <asp:button runat="server" class="btn btn-primary btn-lg btn-block" ID="btn_save" Text="Login"/>
+                <asp:button runat="server" class="btn btn-primary btn-lg btn-block" ID="btn_save" Text="Login" OnClick="btn_save_Click"/>
                <%-- <asp:button runat="server" class="btn btn-info btn-lg btn-block" ID="btn_cancel" Text="Login"/>
                 <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>--%>
             </div>
