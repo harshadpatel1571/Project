@@ -36,7 +36,7 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
         }
         else
         {
-            Response.Write("<script> alert('Error') </script>");
+            Response.Write("<script> alert('Duplicat Data Found !!') </script>");
         }
     }
 
@@ -47,6 +47,14 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
         {
             grd_catagory.DataSource = dt;
             grd_catagory.DataBind();
+        }
+    }
+
+    protected void grd_catagory_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "btn_Edit")
+        {
+            txt_catagory.Text = e.CommandArgument.ToString();
         }
     }
 }
