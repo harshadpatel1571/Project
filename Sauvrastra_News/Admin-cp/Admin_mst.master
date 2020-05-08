@@ -18,10 +18,10 @@
 </head>
 <body>
     <form id="form1" class="form-validate form-horizontal" runat="server">
+        <%-- <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>--%>
         <div>
             <section id="container" class="">
                 <!--header start-->
-
                 <header class="header dark-bg">
                     <div class="toggle-nav">
                         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
@@ -30,8 +30,6 @@
                     <!--logo start-->
                     <a href="index.html" class="logo">Sauvrastra Mirror <span class="lite">Admin</span></a>
                     <!--logo end-->
-
-
 
                     <div class="top-nav notification-row">
                         <!-- notificatoin dropdown start-->
@@ -239,16 +237,18 @@
                                     <span class="profile-ava">
                                         <img alt="" src="img/avatar1_small.jpg">
                                     </span>
-                                    <span class="username"><asp:Label runat="server" ID="lbl_username"></asp:Label> </span>
+                                    <span class="username">
+                                        <asp:Label runat="server" ID="lbl_username"></asp:Label>
+                                    </span>
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu extended logout">
                                     <div class="log-arrow-up"></div>
-                                   
+
                                     <li>
                                         <a href="login.html"><i class="icon_key_alt"></i>Log Out</a>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                             <!-- user login dropdown end -->
@@ -264,12 +264,12 @@
                         <!-- sidebar menu start-->
                         <ul class="sidebar-menu">
                             <li class="">
-                                <a class="" href="#">
+                                <a class="" href="DashBoard.aspx">
                                     <i class="icon_house_alt"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                          
+
                             <li class="sub-menu ">
                                 <a href="javascript:;" class="">
                                     <i class="icon_documents_alt"></i>
@@ -288,22 +288,11 @@
                     </div>
                 </aside>
                 <!--sidebar end-->
-                <section id="main-content">
-                    <section class="wrapper">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h3 class="page-header"><i class="fa fa fa-bars"></i>Pages</h3>
-                                <ol class="breadcrumb">
-                                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                                    <li><i class="fa fa-bars"></i>Pages</li>
-                                    <li><i class="fa fa-square-o"></i>Pages</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </section>
-                </section>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+                </asp:ContentPlaceHolder>
+
             </section>
             <script src="js/jquery.js"></script>
             <script src="js/bootstrap.min.js"></script>

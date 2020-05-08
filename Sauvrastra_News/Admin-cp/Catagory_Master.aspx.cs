@@ -33,6 +33,8 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
         {
             Response.Write("<script> alert('Data Saved.') </script>");
             txt_catagory.Text = "";
+            grd_catagory.DataBind();
+            this.Bind_Data();
         }
         else
         {
@@ -52,9 +54,28 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
 
     protected void grd_catagory_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        if (e.CommandName == "btn_Edit")
+        //if (e.CommandName == "btn_Edit")
+        //{
+        //    txt_catagory.Text = e.CommandArgument.ToString();
+        //}
+
+        if (e.CommandName == "btn_Delete")
         {
-            txt_catagory.Text = e.CommandArgument.ToString();
+            int delete = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument),1);
+            if (delete > 0)
+            {
+                Response.Write("<script> alert('Delete Sucess..') </script>");
+                Bind_Data();
+            }
+        }
+
+        if (e.CommandName == "btn_Status")
+        {
+            int status = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument), 2);
+            if (status > 0)
+            {
+                Bind_Data();
+            }
         }
     }
 }

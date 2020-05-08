@@ -32,4 +32,13 @@ public class BAL_Catagory
         cmd.CommandText = "get_catagory";
         return commands.ExecuteQuery(cmd);
     }
+
+    public static int delete_status(int id, int query)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "delete_status_catagory";
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@query", query);
+        return commands.NonExecuteQuery(cmd);
+    }
 }

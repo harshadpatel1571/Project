@@ -19,7 +19,7 @@ public partial class Admin_cp_Admin_Login : System.Web.UI.Page
         if (data.Rows.Count > 0)
         {
             Session["user_name"] = data.Rows[0]["am_user_name"].ToString();
-            Response.Redirect("Catagory_Master.aspx");
+            Response.Redirect("DashBoard.aspx");
         }
         else
         {
