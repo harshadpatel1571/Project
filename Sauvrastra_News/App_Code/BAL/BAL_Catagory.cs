@@ -26,10 +26,12 @@ public class BAL_Catagory
         return commands.NonExecuteQuery(cmd);
     }
 
-    public static DataTable get_data()
+    public static DataTable get_data(int id, int query)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "get_catagory";
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@query", query);
         return commands.ExecuteQuery(cmd);
     }
 

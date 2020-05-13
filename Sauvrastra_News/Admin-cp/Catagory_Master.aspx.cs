@@ -13,8 +13,15 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            if (Session["update_cat_id"] != "" || Session["user_name"] != null)
+            {
+                DataTable data = BAL_Catagory.get_data(Convert.ToInt32(Session["update_cat_id"]),2);
+                if (data.Rows.Count > 0)
+                {
+                    txt_catagory.Text = data.Rows[0]["cat_name"].ToString();
+                }
+            }
             this.check_session();
-            this.Bind_Data();
         }
     }
 
@@ -33,49 +40,10 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
         {
             Response.Write("<script> alert('Data Saved.') </script>");
             txt_catagory.Text = "";
-            grd_catagory.DataBind();
-            this.Bind_Data();
         }
         else
         {
             Response.Write("<script> alert('Duplicat Data Found !!') </script>");
-        }
-    }
-
-    public void Bind_Data()
-    {
-        DataTable dt = BAL_Catagory.get_data();
-        if (dt.Rows.Count > 0)
-        {
-            grd_catagory.DataSource = dt;
-            grd_catagory.DataBind();
-        }
-    }
-
-    protected void grd_catagory_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        //if (e.CommandName == "btn_Edit")
-        //{
-        //    txt_catagory.Text = e.CommandArgument.ToString();
-        //}
-
-        if (e.CommandName == "btn_Delete")
-        {
-            int delete = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument),1);
-            if (delete > 0)
-            {
-                Response.Write("<script> alert('Delete Sucess..') </script>");
-                Bind_Data();
-            }
-        }
-
-        if (e.CommandName == "btn_Status")
-        {
-            int status = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument), 2);
-            if (status > 0)
-            {
-                Bind_Data();
-            }
         }
     }
 }

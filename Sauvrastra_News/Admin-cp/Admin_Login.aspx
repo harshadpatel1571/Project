@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>Sauvrastra News Admin</title>
+    <title>Sauvrastra Mirror</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
