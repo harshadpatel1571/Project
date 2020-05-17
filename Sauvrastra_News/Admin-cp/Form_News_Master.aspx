@@ -4,55 +4,39 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
 
         var loadFile2 = function (event) {
             var output = document.getElementById('ContentPlaceHolder1_imgshow');
             output.src = URL.createObjectURL(event.target.files[0]);
         };
+
+        $(document).ready(function () {
+            $("#<%=txt_title.ClientID %>").on('keyup', function () {
+                var words = this.value.match(/\S+/g).length;
+                if (words > 50) {
+                    // Split the string on first 200 words and rejoin on spaces
+                    var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+                    // Add a space at the end to keep new typing making new words
+                    document.getElementById("<%=txt_title.ClientID %>").value = trimmed;
+                }
+                $('#lblHeadLine').text('Total Words: 50 / ' + words);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#<%=txt_short_desc.ClientID %>").on('keyup', function () {
+                var words = this.value.match(/\S+/g).length;
+                if (words > 200)
+                {
+                    var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+                    document.getElementById("<%=txt_short_desc.ClientID %>").value = trimmed;
+                }
+                $('#lblshortdesc').text('Total Words: 200 / ' + words);
+            });
+        });
     </script>
-
-   <%--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            var maxWords = 250;
-            var wordCounts = {};
-            $(".txt").keyup(function () {
-                var matches = this.value.match(/\b/g);
-                wordCounts[this.id] = matches ? matches.length / 2 : 0;
-                var totalCount = 0;
-                $.each(wordCounts, function (k, v) {
-                    totalCount += v;
-                });
-
-                if (totalCount > maxWords) {
-                    $(".txt").val(this.value.slice(0, -2));
-                    totalCount = totalCount - 1;
-                }
-                $('#lblWordCount').text('Total Words: 250 / ' + totalCount);
-            }).keyup();
-        });
-
-        $(function () {
-            var maxWords = 150;
-            var wordCounts = {};
-            $(".head_line").keyup(function () {
-                var matches = this.value.match(/\b/g);
-                wordCounts[this.id] = matches ? matches.length / 2 : 0;
-                var totalCount = 0;
-                $.each(wordCounts, function (k, v) {
-                    totalCount += v;
-                });
-
-                if (totalCount > maxWords) {
-                    $(".txt").val(this.value.slice(0, -2));
-                    totalCount = totalCount - 1;
-                }
-                $('#lblHeadLine').text('Total Words: 150 / ' + totalCount);
-            }).keyup();
-        });
-    </script>--%>
 
     <section id="main-content">
         <section class="wrapper">
@@ -102,7 +86,7 @@
                                         <label for="cname" class="control-label col-lg-3">Head Line <span class="required">*</span></label>
                                         <div class="col-lg-5">
                                             <asp:TextBox runat="server" ID="txt_title" CssClass="form-control"></asp:TextBox>
-                                           <%-- <label id="lblHeadLine" class="label label-info"></label>--%>
+                                            <label id="lblHeadLine" class="label label-info"></label>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_title" SetFocusOnError="true"
                                             ErrorMessage="Enter New Title" CssClass="label label-danger">
                                         </asp:RequiredFieldValidator>
@@ -113,7 +97,7 @@
                                         <label for="cname" class="control-label col-lg-3">News Image <span class="required">*</span></label>
                                         <div class="col-lg-5">
                                             <asp:FileUpload ID="img_news" runat="server" CssClass="form-control col-5 border-primary" onchange="loadFile2(event)"></asp:FileUpload>
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="img_news" SetFocusOnError="true"
+                                            <asp:RequiredFieldValidator runat="server" ID="RFV_Img" ControlToValidate="img_news" SetFocusOnError="true"
                                             ErrorMessage="Must Select News image" CssClass="label label-danger">
                                         </asp:RequiredFieldValidator>
                                         </div>
@@ -127,7 +111,7 @@
                                         <div class="col-lg-5">
                                             <asp:TextBox ID="txt_short_desc" CssClass="form-control" runat="server" TextMode="MultiLine"
                                                 autocomplete="off"></asp:TextBox>
-                                            <%--<label id="lblWordCount" class="label label-info"></label>--%>
+                                            <label id="lblshortdesc" class="label label-info"></label>
 
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_short_desc" SetFocusOnError="true"
                                             ErrorMessage="Enter News short description" CssClass="label label-danger">
@@ -161,4 +145,3 @@
         </section>
     </section>
 </asp:Content>
-

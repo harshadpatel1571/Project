@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,15 +13,29 @@ public partial class Admin_cp_Form_News_Master : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            this.check_session();
             data();
+            if (Session["update_news_id"] != "" || Session["update_news_id"] != null)
+            {
+                DataTable dt = BAL_News.get_news_data(Convert.ToInt32(Session["update_news_id"]), 2);
+                if (dt.Rows.Count > 0)
+                {
+                    ddl_cat.SelectedValue = dt.Rows[0]["nm_cat_id"].ToString();
+                    txt_title.Text = dt.Rows[0]["nm_head_line"].ToString();
+                    txt_short_desc.Text = dt.Rows[0]["nm_short_desc"].ToString();
+                    txt_long_desc.Text = dt.Rows[0]["nm_full_desc"].ToString();
+                    imgshow.Src = "img/news_image/"+ dt.Rows[0]["nm_image"].ToString();
+                    news_container.Visible = true;
+                    RFV_Img.Visible = false;
+                }
+            }
+            this.check_session();
         }
     }
 
     public void data()
     {
         DataTable dt = BAL_News.Get_catagory_for_ddl();
-        if(dt.Rows.Count > 0)
+        if (dt.Rows.Count > 0)
         {
             ddl_cat.DataSource = dt;
             ddl_cat.DataTextField = "name";
@@ -39,38 +54,40 @@ public partial class Admin_cp_Form_News_Master : System.Web.UI.Page
 
     protected void btn_save_Click(object sender, EventArgs e)
     {
+        int data = BAL_News.Insert(Convert.ToInt32(ddl_cat.SelectedValue), txt_title.Text,txt_short_desc.Text, txt_long_desc.Text, Convert.ToInt32(Session["update_news_id"]));
+        if(data > 0)
+        {
+            this.save_image(data);
+            Response.Redirect("List_News_Master.aspx");
+            //Response.Write("<script> alert('"+data+"') </script>");
+        }
+    }
+
+    protected void ddl_cat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddl_cat.SelectedValue == "0")
+        {
+            news_container.Visible = false;
+        }
+        else
+        {
+            news_container.Visible = true;
+        }
+
+    }
+
+    public void save_image(int id)
+    {
         if (img_news.HasFile)
         {
             string str = img_news.FileName;
             var fileExt = System.IO.Path.GetExtension(img_news.FileName).Substring(1);
             if (fileExt == "jpeg" || fileExt == "jpg")
             {
-                int savedata = BAL_News.Insert(Convert.ToInt32(ddl_cat.SelectedValue), txt_title.Text, str, txt_short_desc.Text, txt_long_desc.Text, 1);
-
-                if (savedata > 0)
-                {
-                    img_news.PostedFile.SaveAs(Server.MapPath("../Admin-cp/img/news_image/" + str));
-                    Response.Write("<script> alert('News Saved Sucess..') </script>");/*http://localhost:29211/Admin-cp/img/news_image/*/
-                }
-                else
-                {
-                    Response.Write("<script> alert('News Save Error!!') </script>");
-                }
-            }
-            else
-            {
-                Response.Write("<script> alert('Select Jpg or Jpeg file.') </script>");
+                img_news.PostedFile.SaveAs(Server.MapPath("../Admin-cp/img/news_image/" + id + "." + fileExt));
+                int image_save = BAL_News.Image_Update(id, id + "." + fileExt);
             }
         }
-        else
-        {
-            Response.Write("<script> alert('Select file first.') </script>");
-        }
-    }
-
-    protected void ddl_cat_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        news_container.Visible = true;
     }
 
     public void clear()

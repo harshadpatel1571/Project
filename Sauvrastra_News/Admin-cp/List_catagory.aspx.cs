@@ -15,7 +15,6 @@ public partial class List_catagory : System.Web.UI.Page
             this.check_session();
             Session.Remove("update_cat_id");
             this.Bind_Data();
-            
         }
     }
 
@@ -29,7 +28,8 @@ public partial class List_catagory : System.Web.UI.Page
 
     public void Bind_Data()
     {
-        DataTable dt = BAL_Catagory.get_data(0,1);
+        Int32 id = Convert.ToInt32(Session["update_cat_id"]);
+        DataTable dt = BAL_Catagory.get_data(id,1);
         if (dt.Rows.Count > 0)
         {
             grd_catagory.DataSource = dt;

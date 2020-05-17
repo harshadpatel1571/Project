@@ -13,7 +13,7 @@ public partial class Admin_cp_List_News_Master : System.Web.UI.Page
         if (!IsPostBack)
         {
             this.check_session();
-            Session.Remove("update_new_id");
+            Session.Remove("update_news_id");
             this.Bind_Data();
         }
     }
@@ -41,27 +41,27 @@ public partial class Admin_cp_List_News_Master : System.Web.UI.Page
 
         if (e.CommandName == "btn_Edit")
         {
-            Session["update_new_id"] = e.CommandArgument.ToString();
-            Response.Redirect("List_News_Master.aspx");
+            Session["update_news_id"] = e.CommandArgument.ToString();
+            Response.Redirect("Form_News_Master.aspx");
         }
 
         if (e.CommandName == "btn_Delete")
         {
-            //int delete = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument), 1);
-            //if (delete > 0)
-            //{
-            //    Response.Write("<script> alert('Delete Sucess..') </script>");
-            //    Bind_Data();
-            //}
+            int delete = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 1);
+            if (delete > 0)
+            {
+                Response.Write("<script> alert('Delete Sucess..') </script>");
+                Bind_Data();
+            }
         }
 
         if (e.CommandName == "btn_Status")
         {
-            //int status = BAL_Catagory.delete_status(Convert.ToInt32(e.CommandArgument), 2);
-            //if (status > 0)
-            //{
-            //    Bind_Data();
-            //}
+            int status = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 2);
+            if (status > 0)
+            {
+                Bind_Data();
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (Session["update_cat_id"] != "" || Session["user_name"] != null)
+            if (Session["update_cat_id"] != "" || Session["update_cat_id"] != null)
             {
                 DataTable data = BAL_Catagory.get_data(Convert.ToInt32(Session["update_cat_id"]),2);
                 if (data.Rows.Count > 0)
@@ -35,11 +35,12 @@ public partial class Admin_cp_Catagory_Master : System.Web.UI.Page
 
     protected void btn_save_Click(object sender, EventArgs e)
     {
-        int save = BAL_Catagory.insert(txt_catagory.Text);
+        int save = BAL_Catagory.insert(txt_catagory.Text, Convert.ToInt32(Session["update_cat_id"]));
         if (save > 0)
         {
-            Response.Write("<script> alert('Data Saved.') </script>");
             txt_catagory.Text = "";
+            Session.Remove("update_cat_id");
+            Response.Redirect("List_catagory.aspx");
         }
         else
         {

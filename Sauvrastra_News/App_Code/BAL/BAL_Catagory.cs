@@ -18,11 +18,12 @@ public class BAL_Catagory
         //
     }
 
-    public static int insert(string cat_name)
+    public static int insert(string cat_name,int up_id)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "insert_catagory";
         cmd.Parameters.AddWithValue("@cat_name", cat_name);
+        cmd.Parameters.AddWithValue("@up_id", up_id);
         return commands.NonExecuteQuery(cmd);
     }
 
