@@ -66,4 +66,10 @@ public class BAL_News
         cmd.Parameters.AddWithValue("@id", id);
         return commands.NonExecuteQuery(cmd);
     }
+    public static DataTable GetNews()
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "GetHomePageData";
+        return commands.ExecuteQuery(cmd);
+    }
 }

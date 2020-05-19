@@ -44,4 +44,10 @@ public class BAL_Catagory
         cmd.Parameters.AddWithValue("@query", query);
         return commands.NonExecuteQuery(cmd);
     }
+    public static DataTable get_Category()
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "get_catagory_for_dropdown";
+        return commands.ExecuteQuery(cmd);
+    }
 }

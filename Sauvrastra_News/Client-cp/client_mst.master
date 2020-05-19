@@ -7,12 +7,15 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="style.css" rel="stylesheet" />
+    <script src="../JS/angular.min.js"></script>
+    <script src="../JS/NavigationCrtl.js"></script>
+
     <title>Sauvrastra &nbsp; News</title>
     
     <link rel="icon" href="img/core-img/favicon.ico" />
 </head>
-<body>
-    <form id="form1" runat="server">
+<body ng-app="myApp" ng-controller="navigationCtrl">
+    <form id="form1" runat="server" ng-init="getCategory()">
         <div>
             <header class="header-area">
                 <div class="top-header-area">
@@ -61,9 +64,10 @@
                                     </div>
 
                                     <div class="classynav">
-                                        <ul>
-                                            <li class="active"><a href="index-2.html">Home</a></li>
-                                            <li><a href="#">Pages</a>
+                                        <ul >
+                                            <li class="active"><a href="index-2.html">મુખ્ય પાનું</a></li>
+                                            <li ng-repeat="cat in category"><a href="#">{{cat.name}}</a></li>
+                                            <%--<li><a href="#">Pages
                                                 <ul class="dropdown">
                                                     <li><a href="index-2.html">Home</a></li>
                                                     <li><a href="catagories-post.html">Catagories</a></li>
@@ -80,8 +84,8 @@
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="#">Mega Menu</a>
+                                            </li>--%>
+                                           <%-- <li><a href="#">Mega Menu</a>
                                                 <div class="megamenu">
                                                     <ul class="single-mega cn-col-4">
                                                         <li class="title">Catagories</li>
@@ -142,15 +146,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li><a href="#">Politics</a></li>
+                                            </li>--%>
+                                            <%--<li><a href="#">Politics</a></li>
                                             <li><a href="#">Breaking News</a></li>
                                             <li><a href="#">Business</a></li>
                                             <li><a href="#">Technology</a></li>
                                             <li><a href="#">Health</a></li>
                                             <li><a href="#">Travel</a></li>
                                             <li><a href="#">Sports</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact.html">Contact</a></li>--%>
                                         </ul>
                                     </div>
 
@@ -177,7 +181,7 @@
                                 </div>
                             </div>
 
-                            <div class="breaking-news-area d-flex align-items-center mt-15">
+                            <%--<div class="breaking-news-area d-flex align-items-center mt-15">
                                 <div class="news-title title2">
                                     <p>International</p>
                                 </div>
@@ -188,7 +192,7 @@
                                         <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
 
                         <div class="col-12 col-lg-4">
@@ -311,8 +315,6 @@
                     </div>
                 </div>
             </footer>
-
-
 
 
             <script src="js/jquery/jquery-2.2.4.min.js"></script>

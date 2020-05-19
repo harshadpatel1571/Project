@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client-cp/client_mst.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Client_cp_Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <div class="featured-post-area">
+    <div class="featured-post-area" >
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-8">
+            <div class="row"> 
+                <%--<div class="col-12 col-md-6 col-lg-8">
                     <div class="row">
 
                         <div class="col-12 col-lg-7">
@@ -37,34 +38,34 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-lg-5">
+                        </div>--%>
+                        <div class="col-12 col-lg-5"  ng-repeat="new in News">
 
                             <div class="single-blog-post featured-post-2">
                                 <div class="post-thumb">
                                     <a href="#">
-                                        <img src="img/bg-img/17.jpg" alt=""></a>
+                                        <img src="../Admin-cp/img/news_image/{{new.nm_image}}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
+                                    <a href="#" class="post-catagory">{{new.cat_name}}</a>
                                     <div class="post-meta">
                                         <a href="#" class="post-title">
-                                            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac...</h6>
+                                            <h6>{{new.nm_head_line}}</h6>
                                         </a>
 
-                                        <div class="d-flex align-items-center">
+                                        <%--<div class="d-flex align-items-center">
                                             <a href="#" class="post-like">
                                                 <img src="img/core-img/like.png" alt="">
                                                 <span>392</span></a>
                                             <a href="#" class="post-comment">
                                                 <img src="img/core-img/chat.png" alt="">
                                                 <span>10</span></a>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="single-blog-post featured-post-2">
+                            <%--<div class="single-blog-post featured-post-2">
                                 <div class="post-thumb">
                                     <a href="#">
                                         <img src="img/bg-img/18.jpg" alt=""></a>
@@ -86,11 +87,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <%--<div class="col-12 col-md-6 col-lg-4">
 
                     <div class="single-blog-post small-featured-post d-flex">
                         <div class="post-thumb">
@@ -187,13 +188,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
             </div>
-        </div>
-    </div>
+     <%--   </div>
+    </div>--%>
 
 
-    <div class="popular-news-area section-padding-80-50">
+   <%-- <div class="popular-news-area section-padding-80-50">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8">
@@ -344,7 +345,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
     <div class="video-post-area bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
@@ -385,7 +386,7 @@
     </div>
 
 
-    <div class="editors-pick-post-area section-padding-80-50">
+    <%--<div class="editors-pick-post-area section-padding-80-50">
         <div class="container">
             <div class="row">
 
@@ -581,7 +582,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
     <div class="footer-add-area">
