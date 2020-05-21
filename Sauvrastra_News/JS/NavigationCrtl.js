@@ -1,13 +1,11 @@
-﻿/// <reference path="../Client-cp/Home.aspx" />
-var app = angular.module('myApp', []);
-app.controller('navigationCtrl', function ($scope, $http) {
+﻿var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     debugger
     $scope.getCategory = function () {
         var data = { };
         $http.post("Home.aspx/GetCategory", { responseType: 'json' })
         .then(function (response) {
             $scope.category = angular.fromJson(response.data.d);
-
         });
         console.log($scope.category);
         $scope.getNews();
@@ -22,5 +20,34 @@ app.controller('navigationCtrl', function ($scope, $http) {
         });
         console.log($scope.News);
 
+    }
+    $scope.FetchNews = function(news)
+    {
+        var News;
+        var data = $scope.News;
+        debugger;
+        angular.forEach(data, function (value, key) {
+            if (value.nm_id == news) {
+                News = data[key];
+            }
+        });
+        var url = '../Client-cp/NewsPage.aspx'
+        $scope.OpenModel(url, News);
+    }
+    $scope.OpenModel = function (url, datanews) {
+        debugger;
+        $uibModal.open({
+            templateUrl: url,
+            animation: 'am-flip-x',
+            show: true,
+            size: 'lg',
+            controller: function ($scope, $uibModalInstance) {
+                $scope.MainNews = datanews;
+                animation: 'slide-in-up'
+                $scope.ok = function () {
+                    $uibModalInstance.close();
+                }
+            }
+        })
     }
 });

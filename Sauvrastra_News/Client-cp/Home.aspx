@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client-cp/client_mst.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Client_cp_Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
-    
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -43,13 +42,13 @@
 
                             <div class="single-blog-post featured-post-2">
                                 <div class="post-thumb">
-                                    <a href="#">
-                                        <img src="../Admin-cp/img/news_image/{{new.nm_image}}" alt=""></a>
+                                   
+                                        <img src="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new.nm_id)">
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">{{new.cat_name}}</a>
+                                    <a class="post-catagory"  ng-click="FetchNews(new.nm_id)" >{{new.cat_name}}</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
+                                        <a class="post-title" ng-click="FetchNews(new.nm_id)">
                                             <h6>{{new.nm_head_line}}</h6>
                                         </a>
 
