@@ -10,6 +10,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         console.log($scope.category);
         $scope.getNews();
     }
+
     $scope.getNews = function () {
         debugger
         var data = {};
@@ -21,6 +22,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         console.log($scope.News);
 
     }
+
     $scope.FetchNews = function(news)
     {
         var News;
@@ -31,9 +33,10 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
                 News = data[key];
             }
         });
-        var url = '../Client-cp/NewsPage.aspx'
+        var url = '../Client-cp/News_Model.aspx'
         $scope.OpenModel(url, News);
     }
+
     $scope.OpenModel = function (url, datanews) {
         debugger;
         $uibModal.open({

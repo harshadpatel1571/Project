@@ -283,6 +283,13 @@
                                 </ul>
                             </li>
 
+                             <li class="">
+                                <a class="" href="Form_Contact_Master.aspx">
+                                    <i class="icon_contacts"></i>
+                                    <span>Contact us</span>
+                                </a>
+                            </li>
+
                         </ul>
                         <!-- sidebar menu end-->
                     </div>

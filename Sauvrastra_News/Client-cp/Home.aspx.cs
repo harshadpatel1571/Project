@@ -14,6 +14,7 @@ public partial class Client_cp_Home : System.Web.UI.Page
     {
 
     }
+
     [WebMethod]
     public static string GetCategory()
     {
@@ -22,6 +23,7 @@ public partial class Client_cp_Home : System.Web.UI.Page
         outdata = JsonConvert.SerializeObject(dt_BranchWise);
         return outdata;
     }
+
     [WebMethod]
     public static string GetHomePageNews()
     {

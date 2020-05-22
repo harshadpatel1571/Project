@@ -1,13 +1,13 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="NewsPage.aspx.vb" Inherits="Client_cp_NewsPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="News_Model.aspx.cs" Inherits="Client_cp_News_Model" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="style.css" rel="stylesheet" />
+    <title></title>
+     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
-    <title></title>
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <div class="featured-post-area">
