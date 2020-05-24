@@ -15,25 +15,25 @@
         $(document).ready(function () {
             $("#<%=txt_title.ClientID %>").on('keyup', function () {
                 var words = this.value.match(/\S+/g).length;
-                if (words > 50) {
+                if (words > 20) {
                     // Split the string on first 200 words and rejoin on spaces
-                    var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+                    var trimmed = $(this).val().split(/\s+/, 20).join(" ");
                     // Add a space at the end to keep new typing making new words
                     document.getElementById("<%=txt_title.ClientID %>").value = trimmed;
                 }
-                $('#lblHeadLine').text('Total Words: 50 / ' + words);
+                $('#lblHeadLine').text('Total Words: 20 / ' + words);
             });
         });
 
         $(document).ready(function () {
             $("#<%=txt_short_desc.ClientID %>").on('keyup', function () {
                 var words = this.value.match(/\S+/g).length;
-                if (words > 200)
+                if (words > 60)
                 {
-                    var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+                    var trimmed = $(this).val().split(/\s+/, 60).join(" ");
                     document.getElementById("<%=txt_short_desc.ClientID %>").value = trimmed;
                 }
-                $('#lblshortdesc').text('Total Words: 200 / ' + words);
+                $('#lblshortdesc').text('Total Words: 60 / ' + words);
             });
         });
     </script>
@@ -110,7 +110,7 @@
                                         <label for="cname" class="control-label col-lg-3">Short Description <span class="required">*</span></label>
                                         <div class="col-lg-5">
                                             <asp:TextBox ID="txt_short_desc" CssClass="form-control" runat="server" TextMode="MultiLine"
-                                                autocomplete="off"></asp:TextBox>
+                                                autocomplete="off" Height="100"></asp:TextBox>
                                             <label id="lblshortdesc" class="label label-info"></label>
 
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_short_desc" SetFocusOnError="true"
@@ -122,12 +122,13 @@
                                     <div class="form-group">
                                         <label for="cname" class="control-label col-lg-3">Full Description <span class="required">*</span></label>
                                         <div class="col-lg-5">
-                                            <asp:TextBox runat="server" ID="txt_long_desc" CssClass="form-control" TextMode="MultiLine" Height="200"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_long_desc" CssClass="form-control" TextMode="MultiLine" Height="400"></asp:TextBox>
                                              <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_long_desc" SetFocusOnError="true"
                                             ErrorMessage="Enter News full description" CssClass="label label-danger">
                                         </asp:RequiredFieldValidator>
                                         </div>
                                     </div>
+
                                 </div>
                                 <br />
                                 <div class="form-group">

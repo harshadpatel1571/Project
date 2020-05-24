@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_cp_Form_Contact_Master : System.Web.UI.Page
+public partial class Admin_cp_List_Old_News : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

@@ -19,7 +19,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
         });
         console.log($scope.News);
-
     }
     $scope.FetchNews = function(news)
     {
@@ -31,13 +30,12 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
                 News = data[key];
             }
         });
-        var url = "Client-cp/NewsPage.aspx";
-        $scope.OpenModel(url, News);
+        $scope.OpenModel(News);
     }
-    $scope.OpenModel = function (url, datanews) {
+    $scope.OpenModel = function (datanews) {
         debugger;
         $uibModal.open({
-            templateUrl: '/Client-cp/NewsPage.aspx',
+            templateUrl: '/Client-cp/News_Model.aspx',
             animation: 'am-flip-x',
             show: true,
             size: 'lg',

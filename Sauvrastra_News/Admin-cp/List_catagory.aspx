@@ -31,31 +31,33 @@
                                 </div>
                             </div>
                         </header>
-                        <asp:GridView runat="server" ID="grd_catagory" AutoGenerateColumns="false" CssClass="table table-striped table-advance table-hover"
-                            OnRowCommand="grd_catagory_RowCommand">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Sr.No." HeaderStyle-CssClass="col-sm-1">
-                                    <ItemTemplate>
-                                        <%#Container.DataItemIndex+1 %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Catagory Name" HeaderStyle-CssClass="col-sm-9">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("cat_name") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Actions" HeaderStyle-CssClass="col-sm-3">
-                                    <ItemTemplate>
-                                        <asp:ImageButton runat="server" ImageUrl='<%#Eval("cat_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("cat_id") %>' />
-                                        &nbsp; | &nbsp;
+                        <div class="panel-body">
+                            <asp:GridView runat="server" ID="grd_catagory" AutoGenerateColumns="false" CssClass="table table-striped table-advance table-hover"
+                                OnRowCommand="grd_catagory_RowCommand">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Sr.No." HeaderStyle-CssClass="col-sm-1">
+                                        <ItemTemplate>
+                                            <%#Container.DataItemIndex+1 %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Catagory Name" HeaderStyle-CssClass="col-sm-9">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("cat_name") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Actions" HeaderStyle-CssClass="col-sm-3">
+                                        <ItemTemplate>
+                                            <asp:ImageButton runat="server" ImageUrl='<%#Eval("cat_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("cat_id") %>' />
+                                            &nbsp; | &nbsp;
                                 <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Edit.png" Width="20" Height="20" CommandName="btn_Edit" CommandArgument='<%#Eval("cat_id") %>' />
-                                        &nbsp; | &nbsp;
+                                            &nbsp; | &nbsp;
                                 <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("cat_id") %>' />
-                                        &nbsp;  &nbsp;
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
+                                            &nbsp;  &nbsp;
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
                     </section>
                 </div>
             </div>
