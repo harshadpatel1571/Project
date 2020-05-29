@@ -66,6 +66,19 @@ public class BAL_News
         cmd.Parameters.AddWithValue("@id", id);
         return commands.NonExecuteQuery(cmd);
     }
+
+    public static DataTable get_old_news_data(int RowsPerPage, int PageNumber, string from_date, string to_date)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "get_old_news_data";
+        cmd.Parameters.AddWithValue("@RowsPerPage", RowsPerPage);
+        cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
+        cmd.Parameters.AddWithValue("@fromdate", from_date);
+        cmd.Parameters.AddWithValue("@todate", to_date);
+        DataTable dt = new DataTable();
+        return dt = commands.ExecuteQuery(cmd);
+    }
+
     public static DataTable GetNews()
     {
         SqlCommand cmd = new SqlCommand();
