@@ -85,4 +85,12 @@ public class BAL_News
         cmd.CommandText = "GetHomePageData";
         return commands.ExecuteQuery(cmd);
     }
+
+    public static DataTable GetNewsbyCategory(int Cat_ID)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "Get_catagory_wise_data";
+        cmd.Parameters.AddWithValue("@cat_id", Cat_ID);
+        return commands.ExecuteQuery(cmd);
+    }
 }

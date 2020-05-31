@@ -37,21 +37,21 @@
                 <div class="col-4" ng-repeat="new in News">
                     <div class="single-blog-post featured-post-2">
                         <div class="post-thumb">
-                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new.nm_id)" Width="340" Height="200" />
+                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="340" Height="200" />
                         </div>
                         <div class="post-data">
                             <div class="row">
                                 <div class="col-7">
-                                    <a class="post-catagory" ng-click="FetchNews(new.nm_id)">{{new.cat_name}}</a>
+                                    <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}}</a>
                                 </div>
                                 <div class="col-5">
                                     <b class="text-danger"><span class="fa fa-calendar"> &nbsp; {{new.nm_date}}   </span></b>
                                 </div>
                             </div>
-                            <a class="post-title" ng-click="FetchNews(new.nm_id)">
+                            <a class="post-title" ng-click="FetchNews(new)">
                                 <h5>{{new.nm_head_line}}</h5>
                             </a>
-                            <div class="post-meta">
+                            <div class="post-meta" ng-click="FetchNews(new)">
                                 <p> {{new.nm_short_desc}} </p>
                             </div>
                         </div>

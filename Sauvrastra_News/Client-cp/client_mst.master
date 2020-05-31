@@ -73,8 +73,8 @@
 
                                     <div class="classynav">
                                         <ul>
-                                            <li class="active"><a href="Home.aspx">મુખ્ય પાનું</a></li>
-                                            <li ng-repeat="cat in category"><a href="#">{{cat.name}}</a></li>
+                                            <li class="active"><a href="Home.aspx" ng-click="getNews()">મુખ્ય પાનું</a></li>
+                                            <li ng-repeat="cat in category"><a href="#" ng-click="getNewsByCate(cat.id)">{{cat.name}}</a></li>
                                         </ul>
                                     </div>
 
@@ -94,8 +94,9 @@
                                 </div>
                                 <div id="breakingNewsTicker" class="ticker">
                                     <ul>
-                                        <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                        <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[0])">{{News[0].nm_head_line}}</a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[1])">{{News[1].nm_head_line}}</a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[2])">{{News[2].nm_head_line}}</a></li>
                                     </ul>
                                 </div>
                             </div>

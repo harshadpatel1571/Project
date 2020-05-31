@@ -20,19 +20,19 @@
                         
                         <div class="post-thumb">
                             <a>
-                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" ng-click="FetchNews(new.nm_id)" Width="800" Height="300" />
+                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="800" Height="300" />
                             </a>
                         </div>
                         <div class="post-data">
                             <div class="row">
                                 <div class="col-10">
-                                    <a class="post-catagory" ng-click="FetchNews(new.nm_id)">{{MainNews.cat_name}}</a>
+                                    <a class="post-catagory" >{{MainNews.cat_name}}</a>
                                 </div>
                                 <div class="col-2">
                                     <b class="text-danger"><span class="fa fa-calendar"> &nbsp; {{MainNews.nm_date}}   </span></b>
                                 </div>
                             </div>
-                            <a class="post-title" ng-click="FetchNews(new.nm_id)">
+                            <a class="post-title">
                                 <h5>{{MainNews.nm_head_line}}</h5>
                             </a>
                             <div class="post-meta">
