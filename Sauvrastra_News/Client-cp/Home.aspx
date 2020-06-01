@@ -61,41 +61,46 @@
         </div>
 
     </div>
-
+  
     <div class="video-post-area bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
         <div class="container">
+
             <div class="row justify-content-center">
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <img src="img/bg-img/video1.jpg" alt="">
+                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
 
                         <div class="videobtn">
-                            <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
+                            <a href="{{Links[0].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[0].ym_date}}   </span></b>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <img src="img/bg-img/video2.jpg" alt="">
+                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
 
                         <div class="videobtn">
-                            <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
+                            <a href="{{Links[1].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[1].ym_date}}   </span></b>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <img src="img/bg-img/video3.jpg" alt="">
+                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
 
                         <div class="videobtn">
-                            <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
+                            <a href="{{Links[2].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[2].ym_date}}   </span></b>
                 </div>
             </div>
+
         </div>
     </div>
 

@@ -41,4 +41,14 @@ public partial class Client_cp_Home : System.Web.UI.Page
         outdata = JsonConvert.SerializeObject(dt_BranchWise);
         return outdata;
     }
+
+    // add by : Harshad Koradiya
+    [WebMethod]
+    public static string GetYouTubeLinks()
+    {
+        string outdata;
+        DataTable dt_links = BAL_Catagory.get_active_Link();
+        outdata = JsonConvert.SerializeObject(dt_links);
+        return outdata;
+    }
 }

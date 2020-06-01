@@ -1,22 +1,19 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
-using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_cp_List_Old_News : System.Web.UI.Page
+public partial class Admin_cp_Form_video_links : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if(!IsPostBack)
         {
             this.check_session();
-            fromdate.Value = "";
-            todate.Value = "";
+            this.Bind_Data();
         }
     }
 
@@ -28,17 +25,28 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
         }
     }
 
+    protected void btn_add_Click(object sender, EventArgs e)
+    {
+        int link = BAL_Catagory.insert_youtube_link(txt_link.Text);
+        if(link > 0)
+        {
+            Response.Write("<script> alert('Link Save Sucess..') </script>");
+            this.Bind_Data();
+            txt_link.Text = "";
+        }
+    }
+
     public void Bind_Data()
     {
-        DataTable data = BAL_News.get_old_news_data(fromdate.Value,todate.Value);
-        grd_old_news.DataSource = data;
-        grd_old_news.DataBind();
+        DataTable data = BAL_Catagory.get_Youtube_Link();
+        grd_links.DataSource = data;
+        grd_links.DataBind();
         bind_ddl_number();
     }
 
     public void bind_ddl_number()
     {
-        GridViewRow gvrPager = grd_old_news.BottomPagerRow;
+        GridViewRow gvrPager = grd_links.BottomPagerRow;
         if (gvrPager == null) return;
 
         DropDownList ddlPages = (DropDownList)gvrPager.Cells[0].FindControl("ddpage");
@@ -47,34 +55,32 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
         if (ddlPages != null)
         {
             ddlPages.Items.Clear();
-            for (int i = 0; i < grd_old_news.PageCount; i++)
+            for (int i = 0; i < grd_links.PageCount; i++)
             {
                 ListItem lstItem = new ListItem((i + 1).ToString());
-                if (i == grd_old_news.PageIndex)
+                if (i == grd_links.PageIndex)
                     lstItem.Selected = true;
                 ddlPages.Items.Add(lstItem);
             }
         }
 
         if (lblPageCount != null)
-            lblPageCount.Text = grd_old_news.PageCount.ToString();
+            lblPageCount.Text = grd_links.PageCount.ToString();
     }
-
     protected void ddpage_SelectedIndexChanged(object sender, EventArgs e)
     {
-        GridViewRow gvrPager = grd_old_news.BottomPagerRow;
+        GridViewRow gvrPager = grd_links.BottomPagerRow;
         DropDownList ddlPages = (DropDownList)gvrPager.Cells[0].FindControl("ddpage");
-        grd_old_news.PageIndex = ddlPages.SelectedIndex;
-        grd_old_news.DataBind();
+        grd_links.PageIndex = ddlPages.SelectedIndex;
+        grd_links.DataBind();
         this.Bind_Data();
     }
 
-
-    protected void grd_old_news_RowCommand(object sender, GridViewCommandEventArgs e)
+    protected void grd_links_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         if (e.CommandName == "btn_Delete")
         {
-            int delete = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 1);
+            int delete = BAL_Catagory.delete_status_youtube_link(Convert.ToInt32(e.CommandArgument), 1);
             if (delete > 0)
             {
                 Response.Write("<script> alert('Delete Sucess..') </script>");
@@ -84,7 +90,7 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
 
         if (e.CommandName == "btn_Status")
         {
-            int status = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 2);
+            int status = BAL_Catagory.delete_status_youtube_link(Convert.ToInt32(e.CommandArgument), 2);
             if (status > 0)
             {
                 Bind_Data();
@@ -92,16 +98,9 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
         }
     }
 
-    protected void grd_old_news_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    protected void grd_links_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        grd_old_news.PageIndex = e.NewPageIndex;
+        grd_links.PageIndex = e.NewPageIndex;
         this.Bind_Data();
-    }
-
-
-    protected void btn_load_Click(object sender, EventArgs e)
-    {
-        this.Bind_Data();
-        this.bind_ddl_number();
     }
 }

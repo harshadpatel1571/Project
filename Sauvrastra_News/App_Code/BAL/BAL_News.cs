@@ -67,12 +67,10 @@ public class BAL_News
         return commands.NonExecuteQuery(cmd);
     }
 
-    public static DataTable get_old_news_data(int RowsPerPage, int PageNumber, string from_date, string to_date)
+    public static DataTable get_old_news_data(string from_date, string to_date)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "get_old_news_data";
-        cmd.Parameters.AddWithValue("@RowsPerPage", RowsPerPage);
-        cmd.Parameters.AddWithValue("@PageNumber", PageNumber);
         cmd.Parameters.AddWithValue("@fromdate", from_date);
         cmd.Parameters.AddWithValue("@todate", to_date);
         DataTable dt = new DataTable();

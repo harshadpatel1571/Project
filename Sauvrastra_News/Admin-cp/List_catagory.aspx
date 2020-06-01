@@ -33,7 +33,7 @@
                         </header>
                         <div class="panel-body">
                             <asp:GridView runat="server" ID="grd_catagory" AutoGenerateColumns="false" CssClass="table table-striped table-advance table-hover"
-                                OnRowCommand="grd_catagory_RowCommand">
+                                OnRowCommand="grd_catagory_RowCommand" EmptyDataText="No Data found">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Sr.No." HeaderStyle-CssClass="col-sm-1">
                                         <ItemTemplate>

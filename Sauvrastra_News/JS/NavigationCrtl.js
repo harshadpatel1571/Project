@@ -9,6 +9,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         });
         console.log($scope.category);
         $scope.getNews();
+        //$scope.getLinks();
     }
     $scope.getNews = function () {
         debugger
@@ -16,9 +17,20 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         $http.post("Home.aspx/GetHomePageNews", { responseType: 'json' })
         .then(function (response) {
             $scope.News = angular.fromJson(response.data.d);
-
         });
         console.log($scope.News);
+        $scope.getLinks();
+    }
+    // add by : Harshad Koradiya
+    $scope.getLinks = function () {
+        debugger
+        var data = {};
+        $http.post("Home.aspx/GetYouTubeLinks", { responseType: 'json' })
+        .then(function (response) {
+            $scope.Links = angular.fromJson(response.data.d);
+
+        });
+        console.log($scope.Links);
     }
     $scope.FetchNews = function(news)
     {

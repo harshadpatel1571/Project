@@ -23,17 +23,17 @@
                             <div class="form">
                                 <div class="form-group">
                                     <div class="col-lg-10">
-                                        <asp:Label runat="server" Text="Catagory List" ID="lbl_title"></asp:Label>
+                                        <asp:Label runat="server" Text="News List" ID="lbl_title"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <a href="Form_News_Master.aspx" class="btn btn-default round">Add New Catagory</a>
+                                        <a href="Form_News_Master.aspx" class="btn btn-default round">Add News</a>
                                     </div>
                                 </div>
                             </div>
                         </header>
                         <div class="panel-body">
                             <asp:GridView runat="server" ID="grd_news" AutoGenerateColumns="false" CssClass="table table-striped table-advance table-hover"
-                                OnRowCommand="grd_news_RowCommand">
+                                OnRowCommand="grd_news_RowCommand" EmptyDataText="No Data Found..">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Sr.No." HeaderStyle-CssClass="col-sm-1">
                                         <ItemTemplate>
