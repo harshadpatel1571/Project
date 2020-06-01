@@ -91,15 +91,15 @@
                         <div class="col-12 col-lg-8">
                             <div class="breaking-news-area d-flex align-items-center">
                                 <div class="news-title">
-                                    <p>બ્રેકિંગ ન્યુઝ</p>
+                                    <p><b>બ્રેકિંગ ન્યુઝ</b></p>
                                 </div>
                                 <div id="breakingNewsTicker" class="ticker">
                                     <ul>
-                                        <li><a href="#" ng-click="FetchNews(News[0])">{{News[0].nm_head_line}}</a></li>
-                                        <li><a href="#" ng-click="FetchNews(News[1])">{{News[1].nm_head_line}}</a></li>
-                                        <li><a href="#" ng-click="FetchNews(News[2])">{{News[2].nm_head_line}}</a></li>
-                                        <li><a href="#" ng-click="FetchNews(News[3])">{{News[3].nm_head_line}}</a></li>
-                                        <li><a href="#" ng-click="FetchNews(News[4])">{{News[4].nm_head_line}}</a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[0])"><b>{{News[0].nm_head_line}}</b></a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[1])"><b>{{News[1].nm_head_line}}</b></a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[2])"><b>{{News[2].nm_head_line}}</b></a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[3])"><b>{{News[3].nm_head_line}}</b></a></li>
+                                        <li><a href="#" ng-click="FetchNews(News[4])"><b>{{News[4].nm_head_line}}</b></a></li>
                                     </ul>
                                 </div>
                             </div>

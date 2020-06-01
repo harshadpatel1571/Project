@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Sauvrastra Mirror</title>
+    <title>Saurashtra Mirror</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
@@ -23,17 +23,16 @@
 </head>
 <body>
     <form id="form1" class="form-validate form-horizontal" runat="server">
-        <%-- <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>--%>
         <div>
             <section id="container" class="">
                 <!--header start-->
                 <header class="header dark-bg">
                     <div class="toggle-nav">
-                        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+                        <div class="icon-reorder" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
                     </div>
 
                     <!--logo start-->
-                    <a href="index.html" class="logo">Sauvrastra Mirror <span class="lite">Admin</span></a>
+                    <a href="index.html" class="logo">Saurashtra Mirror <span class="lite">Admin</span></a>
                     <!--logo end-->
 
                     <div class="top-nav notification-row">
@@ -242,19 +241,19 @@
                                     <span class="profile-ava">
                                         <img alt="" src="img/avatar1_small.jpg">
                                     </span>
-                                    <span class="username">
-                                        <asp:Label runat="server" ID="lbl_username"></asp:Label>
-                                    </span>
-                                    <b class="caret"></b>
+                                    <b class="username">
+                                        Welcome : <asp:Label runat="server" ID="lbl_username"> </asp:Label>
+                                    </b>
+                                   <%-- <b class="caret"></b>--%>
                                 </a>
-                                <ul class="dropdown-menu extended logout">
+                               <%-- <ul class="dropdown-menu extended logout">
                                     <div class="log-arrow-up"></div>
 
                                     <li>
                                         <a href="Admin_Login.aspx"><i class="icon_key_alt"></i>Log Out</a>
                                     </li>
 
-                                </ul>
+                                </ul>--%>
                             </li>
                             <!-- user login dropdown end -->
                         </ul>
@@ -296,6 +295,13 @@
                                 </a>
                             </li>
 
+                            <li class="">
+                                <a class="" href="Admin_Login.aspx">
+                                    <i class="icon_lock"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+
                         </ul>
                         <!-- sidebar menu end-->
                     </div>
@@ -307,7 +313,6 @@
 
             </section>
 
-            <%--<script src="js/jquery.js"></script>--%>
             <script src="js/bootstrap.min.js"></script>
             <script src="js/jquery.scrollTo.min.js"></script>
             <script src="js/jquery.nicescroll.js" type="text/javascript"></script>

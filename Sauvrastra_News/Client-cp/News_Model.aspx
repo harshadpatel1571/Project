@@ -33,10 +33,10 @@
                                 </div>
                             </div>
                             <a class="post-title">
-                                <h5>{{MainNews.nm_head_line}}</h5>
+                                <h3>{{MainNews.nm_head_line}}</h3>
                             </a>
                             <div class="post-meta">
-                                <p> {{MainNews.nm_full_desc}} </p>
+                                <b> {{MainNews.nm_full_desc}} </b>
                             </div>
                         </div>
                     </div>

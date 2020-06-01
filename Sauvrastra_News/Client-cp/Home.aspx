@@ -49,10 +49,10 @@
                                 </div>
                             </div>
                             <a class="post-title" ng-click="FetchNews(new)">
-                                <h5>{{new.nm_head_line}}</h5>
+                                <h3>{{new.nm_head_line}}</h3>
                             </a>
                             <div class="post-meta" ng-click="FetchNews(new)">
-                                <p> {{new.nm_short_desc}} </p>
+                                <b> {{new.nm_short_desc}} </b>
                             </div>
                         </div>
                     </div>
