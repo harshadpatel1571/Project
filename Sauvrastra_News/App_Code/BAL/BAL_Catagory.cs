@@ -83,5 +83,13 @@ public class BAL_Catagory
         cmd.CommandText = "get_active_youtube_links";
         return commands.ExecuteQuery(cmd);
     }
+
+    // statustic for DashBoard
+    public static DataTable statustic()
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "Get_Statustic_for_DashBoard";
+        return commands.ExecuteQuery(cmd);
+    }
     
 }

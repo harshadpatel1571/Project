@@ -35,6 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4" ng-repeat="new in News">
+
                     <div class="single-blog-post featured-post-2">
                         <div class="post-thumb">
                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="340" Height="200" />
@@ -45,14 +46,14 @@
                                     <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}}</a>
                                 </div>
                                 <div class="col-5">
-                                    <b class="text-danger"><span class="fa fa-calendar"> &nbsp; {{new.nm_date}}   </span></b>
+                                    <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{new.nm_date}}   </span></b>
                                 </div>
                             </div>
                             <a class="post-title" ng-click="FetchNews(new)">
                                 <h3>{{new.nm_head_line}}</h3>
                             </a>
                             <div class="post-meta" ng-click="FetchNews(new)">
-                                <b> {{new.nm_short_desc}} </b>
+                                <b>{{new.nm_short_desc}} </b>
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
         </div>
 
     </div>
-  
+
     <div class="video-post-area bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
         <div class="container">
 
@@ -69,35 +70,35 @@
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
+                        <asp:Image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250" />
 
                         <div class="videobtn">
                             <a href="{{Links[0].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[0].ym_date}}   </span></b>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar">&nbsp; {{Links[0].ym_date}}   </span></b>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
+                        <asp:Image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250" />
 
                         <div class="videobtn">
                             <a href="{{Links[1].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[1].ym_date}}   </span></b>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar">&nbsp; {{Links[1].ym_date}}   </span></b>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-video-post">
-                        <asp:image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250"/>
+                        <asp:Image runat="server" src="../Admin-cp/img/buttons/Capture.png" alt="" Height="250" />
 
                         <div class="videobtn">
                             <a href="{{Links[2].ym_link}}" class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <b class="text-white">Daily News || <span class="fa fa-calendar"> &nbsp; {{Links[2].ym_date}}   </span></b>
+                    <b class="text-white">Daily News || <span class="fa fa-calendar">&nbsp; {{Links[2].ym_date}}   </span></b>
                 </div>
             </div>
 
