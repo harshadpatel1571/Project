@@ -58,8 +58,8 @@
                             <nav class="classy-navbar justify-content-between" id="newspaperNav">
 
                                 <div class="logo">
-                                    <a href="index-2.html">
-                                        <img src="img/core-img/logo.png" alt=""></a>
+                                    <a href="Home.aspx">
+                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo.png" Height="300" /></a>
                                 </div>
 
                                 <div class="classy-navbar-toggler">
@@ -131,14 +131,14 @@
 
                                     <div class="footer-logo">
                                         <a href="Home.aspx">
-                                            <asp:Image ImageUrl="~/Admin-cp/img/buttons/Logo.png" runat="server" Height="200"/>
+                                            <img src="img/core-img/sm_footer_logo.png" />
                                         </a>
                                         <ul class="list">
-                                        <li><a href="email:">saurashtramirrornews@gmail.com</a></li>
-                                        <li><a href="tel:+917359999947">+91 73599 99947</a></li>
-                                        <li><a href=""></a></li>
-                                    </ul>
-                                    
+                                            <li><a href="email:">saurashtramirrornews@gmail.com</a></li>
+                                            <li><a href="tel:+917359999947">+91 73599 99947</a></li>
+                                            <li><a href=""></a></li>
+                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,9 @@
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
                             <div class="col-12">
-                               <p>Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span> All Rights Reserved. || &nbsp; Develop By : SJ infotech
+                                <p>
+                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
+                                All Rights Reserved. || &nbsp; Develop By : SJ infotech
                             </div>
                         </div>
                     </div>
