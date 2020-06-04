@@ -35,13 +35,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     $scope.FetchNews = function(news)
     {
         var News = news;
-        //var data = $scope.News;
-        //debugger;
-        //angular.forEach(data, function (value, key) {
-        //    if (value.nm_id == news) {
-        //        News = data[key];
-        //    }
-        //});
         $scope.OpenModel(News);
     }
 

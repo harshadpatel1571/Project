@@ -24,7 +24,15 @@
                                 <label class="text-danger">Close</label>
                             </div>
                         </div>
-                        
+
+                        <div class="post-thumb">
+                            <a>
+                                <iframe width="770" height="300"
+                                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                </iframe>
+                            </a>
+                        </div>
+
                         <div class="post-thumb">
                             <a>
                                 <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="800" Height="300" />
