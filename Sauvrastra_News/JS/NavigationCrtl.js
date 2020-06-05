@@ -33,10 +33,14 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         console.log($scope.Links);
     }
     $scope.FetchNews = function(news)
-    {
+    {debugger
         var News = news;
+        
         $scope.OpenModel(News);
+
     }
+
+    
 
     $scope.getNewsByCate = function (cat_ID) {
         debugger
@@ -59,17 +63,20 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             show: true,
             size: 'lg',
             windowTopClass: 'modelsize90 am-flip-x',
-            controller: function ($scope, $uibModalInstance) {
+            controller: function ($scope, $uibModalInstance, $sce) {
                 $scope.MainNews = datanews;
                 animation: 'slide-in-up'
                 $scope.ok = function () {
                     $uibModalInstance.close();
                 }
+                $scope.trustSrc = function (src) {
+                    return $sce.trustAsResourceUrl(src);
+                }
             }
         })
     }
-    $scope.OnModalLoad = function()
-    {
-        alert("Hello");
-    }
+    //$scope.OnModalLoad = function()
+    //{
+    //    alert("Hello");
+    //}
 });

@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
 
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
@@ -21,19 +21,20 @@
                             <div class="col-sm-10">
                             </div>
                             <div class="col-sm-2" style="text-align: right;">
-                                <label class="text-danger">Close</label>
+                                <input type="button" id="btnClose" value="બંધ" ng-click="ok()" style="color:red"/>
+                                <%--<label class="text-danger" ng-click="ok()">Close</label>--%>
                             </div>
                         </div>
 
-                        <div class="post-thumb">
+                        <div class="post-thumb" ng-if= "MainNews.nm_video_link != null">
                             <a>
-                                <iframe width="770" height="300"
-                                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
+                                <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}">
                                 </iframe>
                             </a>
                         </div>
 
-                        <div class="post-thumb">
+                        <div class="post-thumb"  ng-if="MainNews.nm_video_link == null">
                             <a>
                                 <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="800" Height="300" />
                             </a>

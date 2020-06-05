@@ -24,7 +24,7 @@ public class BAL_News
         return commands.ExecuteQuery(cmd);
     }
         
-    public static int Insert(int cat_id, string head_line,string short_desc, string full_desc, int id)
+    public static int Insert(int cat_id, string head_line,string short_desc, string full_desc,string links, int id)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "insert_update_news";
@@ -32,6 +32,7 @@ public class BAL_News
         cmd.Parameters.AddWithValue("@head_line",head_line);
         cmd.Parameters.AddWithValue("@short_desc",short_desc);
         cmd.Parameters.AddWithValue("@full_desc",full_desc);
+        cmd.Parameters.AddWithValue("@link", links);
         cmd.Parameters.AddWithValue("@id",id);
         // bellow code for return data
         cmd.Parameters.Add("@ret_id", SqlDbType.Int);

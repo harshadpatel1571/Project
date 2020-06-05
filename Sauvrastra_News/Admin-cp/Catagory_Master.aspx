@@ -9,9 +9,8 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa fa-bars"></i>News</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="DashBoard.aspx">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="DashBoard">Home</a></li>
                         <li><i class="fa fa-bars"></i>Catagory</li>
-                        <%--<li><i class="fa fa-square-o"></i>Pages</li>--%>
                     </ol>
                 </div>
             </div>
@@ -26,7 +25,7 @@
                                         <asp:Label runat="server" Text="Add Catagory" ID="lbl_title"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <a href="List_catagory.aspx" class="btn btn-default round">Manage Catagory</a>
+                                        <a href="Form_Contact_Master.aspx" class="btn btn-default round">Manage Catagory</a>
                                     </div>
                                 </div>
                             </div>

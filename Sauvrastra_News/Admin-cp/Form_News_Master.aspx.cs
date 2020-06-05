@@ -23,6 +23,7 @@ public partial class Admin_cp_Form_News_Master : System.Web.UI.Page
                     txt_title.Text = dt.Rows[0]["nm_head_line"].ToString();
                     txt_short_desc.Text = dt.Rows[0]["nm_short_desc"].ToString();
                     txt_long_desc.Text = dt.Rows[0]["nm_full_desc"].ToString();
+                    txt_link.Text = dt.Rows[0]["nm_video_link"].ToString();
                     imgshow.Src = "img/news_image/"+ dt.Rows[0]["nm_image"].ToString();
                     news_container.Visible = true;
                     RFV_Img.Visible = false;
@@ -54,12 +55,13 @@ public partial class Admin_cp_Form_News_Master : System.Web.UI.Page
 
     protected void btn_save_Click(object sender, EventArgs e)
     {
-        int data = BAL_News.Insert(Convert.ToInt32(ddl_cat.SelectedValue), txt_title.Text,txt_short_desc.Text, txt_long_desc.Text, Convert.ToInt32(Session["update_news_id"]));
+        String str = txt_link.Text;
+        String Links = str.Replace("watch?v=", "embed/");
+        int data = BAL_News.Insert(Convert.ToInt32(ddl_cat.SelectedValue), txt_title.Text,txt_short_desc.Text, txt_long_desc.Text,Links,Convert.ToInt32(Session["update_news_id"]));
         if(data > 0)
         {
             this.save_image(data);
             Response.Redirect("List_News_Master.aspx");
-            //Response.Write("<script> alert('"+data+"') </script>");
         }
     }
 

@@ -93,6 +93,13 @@
                                         </div>
                                     </div>
 
+                                     <div class="form-group">
+                                        <label for="cname" class="control-label col-lg-3">Live Youtube Link</label>
+                                        <div class="col-lg-5">
+                                            <asp:TextBox runat="server" ID="txt_link" CssClass="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="cname" class="control-label col-lg-3">News Image <span class="required">*</span></label>
                                         <div class="col-lg-5">

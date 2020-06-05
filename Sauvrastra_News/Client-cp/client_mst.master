@@ -2,25 +2,24 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
-
-    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/angular-animate.js"></script>
+    <script src="../JS/angular-sanitize.js"></script>
+    <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
-    <title>Sauvrastra &nbsp; News</title>
+    <title>Sauvrastra &nbsp; Mirror</title>
 
-    <link rel="icon" href="img/core-img/favicon.ico" />
+    <link rel="icon" href="img/core-img/sm_footer_logo.png" />
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <form id="form1" runat="server" ng-init="getCategory()">
@@ -126,33 +125,51 @@
                 <div class="main-footer-area">
                     <div class="container">
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="footer-widget-area mt-80">
 
                                     <div class="footer-logo">
                                         <a href="Home.aspx">
                                             <img src="img/core-img/sm_footer_logo.png" />
                                         </a>
+                                        <br />
                                         <ul class="list">
                                             <li><a href="email:">saurashtramirrornews@gmail.com</a></li>
                                             <li><a href="tel:+917359999947">+91 73599 99947</a></li>
                                             <li><a href=""></a></li>
                                         </ul>
-
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="footer-widget-area mt-80">
 
-                                    <h4 class="widget-title">Politics</h4>
+                                    <h4 class="widget-title">Our Vision</h4>
+                                    <p><strong>The vision of the channel is <br /> "' Darek Pal Na Sachot Samachar "</strong></p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-4 col-lg-2">
+                                <div class="footer-widget-area mt-80">
+                                    <p><b>Owner-Editor</b></p> 
+                                    <p>Sohil Thakkar</p>
+                                    <p><b>Managing Director</b></p>
+                                    <p>Karan Thakkar </p> 
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-4 col-lg-2">
+                                <div class="footer-widget-area mt-80">
+
+                                    <h4 class="widget-title">Also Follow On</h4>
 
                                     <ul class="list">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Markets</a></li>
-                                        <li><a href="#">Tech</a></li>
-                                        <li><a href="#">Luxury</a></li>
+                                        <li><a href="https://www.facebook.com/pages/category/Media-News-Company/Saurashtra-Mirror-106407867732090/"><img src="img/core-img/facebook.png" width="30" height="30" /> &nbsp; Facebook </a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCYfA_DzrDN9njhC55zIGJhw"><img src="img/core-img/youtube.png" width="30" height="30" /> &nbsp; Youtube </a></li>
+                                        <li><a href="https://www.instagram.com/saurashtramirror/"><img src="img/core-img/insta.png" width="30" height="30" /> &nbsp; Instagram </a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -160,51 +177,12 @@
                             <div class="col-12 col-sm-4 col-lg-2">
                                 <div class="footer-widget-area mt-80">
 
-                                    <h4 class="widget-title">Featured</h4>
+                                    <h4 class="widget-title">Our App</h4>
 
                                     <ul class="list">
-                                        <li><a href="#">Football</a></li>
-                                        <li><a href="#">Golf</a></li>
-                                        <li><a href="#">Tennis</a></li>
-                                        <li><a href="#">Motorsport</a></li>
-                                        <li><a href="#">Horseracing</a></li>
-                                        <li><a href="#">Equestrian</a></li>
-                                        <li><a href="#">Sailing</a></li>
-                                        <li><a href="#">Skiing</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-sm-4 col-lg-2">
-                                <div class="footer-widget-area mt-80">
-
-                                    <h4 class="widget-title">FAQ</h4>
-
-                                    <ul class="list">
-                                        <li><a href="#">Aviation</a></li>
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Traveller</a></li>
-                                        <li><a href="#">Destinations</a></li>
-                                        <li><a href="#">Features</a></li>
-                                        <li><a href="#">Food/Drink</a></li>
-                                        <li><a href="#">Hotels</a></li>
-                                        <li><a href="#">Partner Hotels</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-sm-4 col-lg-2">
-                                <div class="footer-widget-area mt-80">
-
-                                    <h4 class="widget-title">+More</h4>
-
-                                    <ul class="list">
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">Design</a></li>
-                                        <li><a href="#">Architecture</a></li>
-                                        <li><a href="#">Arts</a></li>
-                                        <li><a href="#">Autos</a></li>
-                                        <li><a href="#">Luxury</a></li>
+                                        <li><a href="#"><img src="img/core-img/playstore.png" width="30" height="30" /> &nbsp; Facebook </a></li>
+                                        <li><a href="#"><img src="img/core-img/iphone.png" width="30" height="30" /> &nbsp; Youtube </a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -219,6 +197,8 @@
                                 <p>
                                     Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
                                 All Rights Reserved. || &nbsp; Develop By : SJ infotech
+
+                                </p>
                             </div>
                         </div>
                     </div>

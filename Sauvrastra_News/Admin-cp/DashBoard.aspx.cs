@@ -21,7 +21,7 @@ public partial class Admin_cp_DashBoard : System.Web.UI.Page
     {
         if (Session["user_name"] == "" || Session["user_name"] == null)
         {
-            Response.Redirect("Admin_Login.aspx");
+            Response.Redirect("Login");
         }
     }
 

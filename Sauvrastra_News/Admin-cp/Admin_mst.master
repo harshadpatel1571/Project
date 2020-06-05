@@ -2,9 +2,9 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <title>Saurashtra Mirror</title>
+    <title>Saurashtra Mirror - Admin</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
@@ -13,10 +13,12 @@
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/moment.min.js"></script>
+    <script src="../JS/daterangepicker.min.js"></script>
+    <link href="../JS/daterangepicker.css" rel="stylesheet" />
+
+    <link rel="icon" href="img/buttons/Logo.png" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -32,7 +34,7 @@
                     </div>
 
                     <!--logo start-->
-                    <a href="index.html" class="logo">Saurashtra Mirror <span class="lite">Admin</span></a>
+                    <a href="DashBoard.aspx" class="logo">Saurashtra Mirror <span class="lite">Admin</span></a>
                     <!--logo end-->
 
                     <div class="top-nav notification-row">
@@ -244,9 +246,9 @@
                                     <b class="username">
                                         Welcome : <asp:Label runat="server" ID="lbl_username"> </asp:Label>
                                     </b>
-                                   <%-- <b class="caret"></b>--%>
+                                 <%--   <b class="caret"></b>--%>
                                 </a>
-                               <%-- <ul class="dropdown-menu extended logout">
+                                <%--<ul class="dropdown-menu extended logout">
                                     <div class="log-arrow-up"></div>
 
                                     <li>
@@ -288,12 +290,12 @@
                                 </ul>
                             </li>
 
-                            <li class="">
+                          <%--  <li class="">
                                 <a class="" href="Form_Contact_Master.aspx">
                                     <i class="icon_contacts"></i>
                                     <span>Contact us</span>
                                 </a>
-                            </li>
+                            </li>--%>
 
                             <li class="">
                                 <a class="" href="Admin_Login.aspx">

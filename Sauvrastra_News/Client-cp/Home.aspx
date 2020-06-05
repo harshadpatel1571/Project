@@ -6,27 +6,6 @@
             opacity: 1;
             padding-top: 200px;
         }
-
-        /*.modalPopup {
-            background-color: #FFFFFF;
-            border-width: 3px;
-            border-style: solid;
-            border-color: black;
-            padding-top: 10px;
-            padding-left: 10px;
-            width: 300px;
-            height: 140px;
-        }*/
-
-        /*.modal.in .modal-dialog {
-            transform: translate(0, 0);
-            object-position:center;
-        }
-
-        .modal-backdrop.in {
-            opacity: 0.5;
-            
-        }*/
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
