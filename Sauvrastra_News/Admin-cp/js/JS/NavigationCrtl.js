@@ -75,8 +75,4 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         })
     }
-    //$scope.OnModalLoad = function()
-    //{
-    //    alert("Hello");
-    //}
 });

@@ -6,17 +6,17 @@
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
-    <link href="../JS/bootstrap.min.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <script src="../JS/angular.min.js"></script>
     
-    <script src="../JS/jquery.min.js"></script>
-    <script src="../JS/bootstrap.min.js"></script>
-    <script src="../JS/angular-animate.js"></script>
-    <script src="../JS/angular-sanitize.js"></script>
-    <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
-    <script src="../JS/NavigationCrtl.js"></script>
+    <link href="../Admin-cp/js/JS/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="../Admin-cp/js/JS//angular.min.js"></script>
+    
+    <script src="../Admin-cp/js/JS//jquery.min.js"></script>
+    <script src="../Admin-cp/js/JS//bootstrap.min.js"></script>
+    <script src="../Admin-cp/js/JS//angular-animate.js"></script>
+    <script src="../Admin-cp/js/JS//angular-sanitize.js"></script>
+    <script src="../Admin-cp/js/JS//ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="../Admin-cp/js/JS//NavigationCrtl.js"></script>
     <title>Sauvrastra &nbsp; Mirror</title>
 
     <link rel="icon" href="img/core-img/sm_footer_logo.png" />
@@ -211,7 +211,6 @@
                     $("#year").text((new Date).getFullYear());
                 });
             </script>
-
             <script src="js/jquery/jquery-2.2.4.min.js"></script>
             <script src="js/bootstrap/bootstrap.min.js"></script>
             <script src="js/bootstrap/popper.min.js"></script>
