@@ -25,7 +25,7 @@
                                         <asp:Label runat="server" Text="Add Catagory" ID="lbl_title"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <a href="Form_Contact_Master.aspx" class="btn btn-default round">Manage Catagory</a>
+                                        <a href="List_catagory.aspx" class="btn btn-default round">Manage Catagory</a>
                                     </div>
                                 </div>
                             </div>

@@ -46,10 +46,10 @@
                                         <table>
                                             <tr>
                                                 <td>
-                                                    <asp:ImageButton runat="server" ID="btnfirst" ImageUrl="~/Admin-cp/img/buttons/Firat.png" Width="30" Height="30" CommandArgument="First" CommandName="Page" />
+                                                    <asp:ImageButton runat="server" ID="btnfirst" ImageUrl="~/Admin-cp/img/buttons/Firat.png" Width="15" Height="15" CommandArgument="First" CommandName="Page" />
                                                 </td>
                                                 <td>
-                                                    <asp:ImageButton runat="server" ID="btnprev" ImageUrl="~/Admin-cp/img/buttons/Prev.png" Width="30" Height="30" CommandArgument="Prev" CommandName="Page" />
+                                                    <asp:ImageButton runat="server" ID="btnprev" ImageUrl="~/Admin-cp/img/buttons/Prev.png" Width="20" Height="20" CommandArgument="Prev" CommandName="Page" />
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="ddpage" runat="server" OnSelectedIndexChanged="ddpage_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
@@ -58,10 +58,10 @@
                                                     <asp:Label ID="lblcount" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
-                                                    <asp:ImageButton runat="server" ID="btnnext" ImageUrl="~/Admin-cp/img/buttons/Next.png" Width="30" Height="30" CommandArgument="Next" CommandName="Page" />
+                                                    <asp:ImageButton runat="server" ID="btnnext" ImageUrl="~/Admin-cp/img/buttons/Next.png" Width="20" Height="20" CommandArgument="Next" CommandName="Page" />
                                                 </td>
                                                 <td>
-                                                    <asp:ImageButton runat="server" ID="btnlast" ImageUrl="~/Admin-cp/img/buttons/Last.png" Width="30" Height="30" CommandArgument="Last" CommandName="Page" />
+                                                    <asp:ImageButton runat="server" ID="btnlast" ImageUrl="~/Admin-cp/img/buttons/Last.png" Width="15" Height="15" CommandArgument="Last" CommandName="Page" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -73,9 +73,15 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-                                        <asp:TemplateField HeaderText="Catagory" HeaderStyle-CssClass="col-sm-9">
+                                        <asp:TemplateField HeaderText="News Links" HeaderStyle-CssClass="col-sm-8">
                                             <ItemTemplate>
-                                                <asp:Label ID="lbl_cat" runat="server" Text='<%#Eval("ym_link") %>'></asp:Label>
+                                                <asp:Label ID="lbl_link" runat="server" Text='<%#Eval("ym_link") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="Date" HeaderStyle-CssClass="col-sm-2">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lbl_date" runat="server" Text='<%#Eval("ym_date") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                        
@@ -84,7 +90,7 @@
                                                 <asp:ImageButton runat="server" ImageUrl='<%#Eval("ym_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("ym_id") %>' />
                                                 &nbsp; | &nbsp;
                                 <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("ym_id") %>' />
-                                                &nbsp; | &nbsp;
+                                               
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

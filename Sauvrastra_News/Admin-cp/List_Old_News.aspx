@@ -128,7 +128,7 @@
                                                 <asp:ImageButton runat="server" ImageUrl='<%#Eval("nm_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("nm_id") %>' />
                                                 &nbsp; | &nbsp;
                                 <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("nm_id") %>' />
-                                                &nbsp; | &nbsp;
+                                                
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
