@@ -8,25 +8,15 @@
         var loadFile2 = function (event) {
             var output = document.getElementById('ContentPlaceHolder1_imgshow');
             output.src = URL.createObjectURL(event.target.files[0]);
-        };
 
-        //function validateImage() {
-        //    var formData = new FormData();
-        //    var file = document.getElementById("img_add").files[0];
-        //    formData.append("Filedata", file);
-        //    var t = file.type.split('/').pop().toLowerCase();
-        //    if (t != "jpeg" && t != "jpg") {
-        //        alert('Please select a valid image file');
-        //        document.getElementById("img_add").value = '';
-        //        return false;
-        //    }
-        //    //if (file.size > 1024000) {
-        //    //    alert('Max Upload size is 1MB only');
-        //    //    document.getElementById("img").value = '';
-        //    //    return false;
-        //    //}
-        //    return true;
-        //}
+            var imageInput = document.getElementById('ContentPlaceHolder1_img_add');
+            var file = imageInput.value;
+            file = file.substring(file.lastIndexOf('.') + 1).toLowerCase();
+            
+            if (file != "jpeg" && file != "jpg" && file != "gif") {
+                alert('Please select jpeg or jpg or gif image file');
+            }
+        };
     </script>
 
     <section id="main-content">

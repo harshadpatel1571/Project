@@ -8,8 +8,15 @@
     <script type="text/javascript">
 
         var loadFile2 = function (event) {
+            debugger;
             var output = document.getElementById('ContentPlaceHolder1_imgshow');
             output.src = URL.createObjectURL(event.target.files[0]);
+           
+            var imageInput = document.getElementById('ContentPlaceHolder1_img_news');
+            var isValid = /\.jpe?g$/i.test(imageInput.value);
+            if (!isValid) {
+                alert('Only jpg files allowed!');
+            }
         };
 
         $(document).ready(function () {
