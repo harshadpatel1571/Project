@@ -98,23 +98,23 @@
                 <div class="col-12">
                     <div id="internationalTicker" class="ticker">
                         <ul>
-                            <li>
+                            <li ng-if="FooterAdd.length >= 1">
                                 <a href="{{Add[0].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
                             </li>
-                            <li>
+                            <li ng-if="FooterAdd.length >= 2">
                                 <a href="{{Add[1].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[1].add_image}}" alt="" Width="1150" Height="150" /></a>
                             </li>
-                            <li>
+                            <li ng-if="FooterAdd.length >= 3">
                                 <a href="{{Add[2].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[2].add_image}}" alt="" Width="1150" Height="150" /></a>
                             </li>
-                            <li>
+                            <li ng-if="FooterAdd.length >= 4">
                                 <a href="{{Add[3].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[3].add_image}}" alt="" Width="1150" Height="150" /></a>
                             </li>
-                            <li>
+                            <li ng-if="FooterAdd.length >= 5">
                                 <a href="{{Add[4].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[4].add_image}}" alt="" Width="1150" Height="150" /></a>
                             </li>

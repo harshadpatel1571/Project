@@ -108,15 +108,15 @@
                                 <div id="Banner" class="ticker">
                                     <ul>
 
-                                        <li><a href="{{Add[0].add_link}}">
+                                        <li ng-if="TopAdd.length >= 1"><a href="{{Add[0].add_link}}">
                                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[0].add_image}}" alt="" Width="364" Height="97" /></a></li>
-                                        <li><a href="{{Add[1].add_link}}">
+                                        <li ng-if="TopAdd.length >= 2"><a href="{{Add[1].add_link}}">
                                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[1].add_image}}" alt="" Width="364" Height="97" /></a></li>
-                                        <li><a href="{{Add[2].add_link}}">
+                                        <li ng-if="TopAdd.length >= 3"><a href="{{Add[2].add_link}}">
                                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[2].add_image}}" alt="" Width="364" Height="97" /></a></li>
-                                        <li><a href="{{Add[3].add_link}}">
+                                        <li ng-if="TopAdd.length >= 4"><a href="{{Add[3].add_link}}">
                                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[3].add_image}}" alt="" Width="364" Height="97" /></a></li>
-                                        <li><a href="{{Add[4].add_link}}">
+                                        <li ng-if="TopAdd.length >= 5"><a href="{{Add[4].add_link}}">
                                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[4].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                     </ul>
                                 </div>
