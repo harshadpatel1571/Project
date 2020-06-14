@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin-cp/Admin_mst.master" AutoEventWireup="true" CodeFile="Form_video_links.aspx.cs" Inherits="Admin_cp_Form_video_links" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    
     <section id="main-content">
         <section class="wrapper">
             <div class="row">
@@ -33,10 +35,14 @@
                                 <div class='col-sm-3'>
                                     <b>Past Youtube Link : </b>
                                     <asp:TextBox runat="server" ID="txt_link" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label runat="server" ID="Lbl_Error" CssClass="label label-danger"></asp:Label>
+                                    <%--<asp:RequiredFieldValidator runat="server" ID="RFV_link" ControlToValidate="txt_link" SetFocusOnError="true"
+                                            ErrorMessage="Insert Proper Link" CssClass="" ValidationExpression="http(s)?://(www\.)?(youtu\.be|youtube\.com)[\w-/=&?]+">
+                                            </asp:RequiredFieldValidator>--%>
                                 </div>
                                 <div class="col-sm-4">
                                     <br />
-                                    <asp:Button runat="server" Text="Add Link" ID="btn_add" CssClass="btn btn-primary col-sm-4" OnClick="btn_add_Click" />
+                                    <asp:Button runat="server" Text="Add Link" ID="btn_add" CssClass="btn btn-primary col-sm-4" OnClientClick="isValid()" OnClick="btn_add_Click" />
                                 </div>
                             </div>
                             <br />

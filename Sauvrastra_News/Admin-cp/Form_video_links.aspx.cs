@@ -27,13 +27,22 @@ public partial class Admin_cp_Form_video_links : System.Web.UI.Page
 
     protected void btn_add_Click(object sender, EventArgs e)
     {
-        int link = BAL_Catagory.insert_youtube_link(txt_link.Text);
-        if(link > 0)
+        if(txt_link.Text == "")
         {
-            Response.Write("<script> alert('Link Save Sucess..') </script>");
-            this.Bind_Data();
-            txt_link.Text = "";
+            Lbl_Error.Text = "Enter Link";
         }
+        else
+        {
+            int link = BAL_Catagory.insert_youtube_link(txt_link.Text);
+            if (link > 0)
+            {
+                Response.Write("<script> alert('Link Save Sucess..') </script>");
+                this.Bind_Data();
+                txt_link.Text = "";
+                Lbl_Error.Text = "";
+            }
+        }
+        
     }
 
     public void Bind_Data()
