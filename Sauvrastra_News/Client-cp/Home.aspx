@@ -9,7 +9,16 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            })
+            $('body').on("contextmenu", function (e) {
+                return false;
+            })
+        })
+    </script>
     <div class="featured-post-area">
         <div class="container">
             <div class="row">
@@ -80,7 +89,6 @@
                     <b class="text-white">Daily News || <span class="fa fa-calendar">&nbsp; {{Links[2].ym_date}}   </span></b>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -88,13 +96,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="footer-add">
-                        <a href="#">
-                            <img src="img/bg-img/footer-add.gif" alt=""></a>
+                    <div id="internationalTicker" class="ticker">
+                        <ul>
+                            <li>
+                                <a href="{{Add[0].add_link}}">
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
+                            </li>
+                            <li>
+                                <a href="{{Add[1].add_link}}">
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[1].add_image}}" alt="" Width="1150" Height="150" /></a>
+                            </li>
+                            <li>
+                                <a href="{{Add[2].add_link}}">
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[2].add_image}}" alt="" Width="1150" Height="150" /></a>
+                            </li>
+                            <li>
+                                <a href="{{Add[3].add_link}}">
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[3].add_image}}" alt="" Width="1150" Height="150" /></a>
+                            </li>
+                            <li>
+                                <a href="{{Add[4].add_link}}">
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[4].add_image}}" alt="" Width="1150" Height="150" /></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <br /><br /><br /> <br /><br />
     </div>
 
 </asp:Content>

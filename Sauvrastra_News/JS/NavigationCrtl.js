@@ -2,26 +2,14 @@
 app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     $scope.getCategory = function () {
         var data = {};
-        $http.post("Home.aspx/GetCategory", { responseType: 'json' })
+        $http.post("Home.aspx/firstPageData", { responseType: 'json' })
         .then(function (response) {
-            $scope.category = angular.fromJson(response.data.d);
-        });
-        $scope.getNews();
-    }
-    $scope.getNews = function () {
-        var data = {};
-        $http.post("Home.aspx/GetHomePageNews", { responseType: 'json' })
-        .then(function (response) {
-            $scope.News = angular.fromJson(response.data.d);
-        });
-        $scope.getLinks();
-    }
-    // add by : Harshad Koradiya
-    $scope.getLinks = function () {
-        var data = {};
-        $http.post("Home.aspx/GetYouTubeLinks", { responseType: 'json' })
-        .then(function (response) {
-            $scope.Links = angular.fromJson(response.data.d);
+            $scope.getFirstData = angular.fromJson(response.data.d);
+            $scope.category = $scope.getFirstData.Table1;
+            $scope.News = $scope.getFirstData.Table;
+            $scope.Links = $scope.getFirstData.Table2;
+            $scope.TopAdd = $scope.getFirstData.Table3;
+            $scope.FooterAdd = $scope.getFirstData.Table4;
         });
     }
     $scope.FetchNews = function (news) {

@@ -6,7 +6,7 @@
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    
+
     <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
@@ -16,7 +16,7 @@
     <script src="../JS/angular-sanitize.js"></script>
     <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
-    
+
     <title>Sauvrastra &nbsp; Mirror</title>
 
     <link rel="icon" href="img/core-img/sm_footer_logo.png" />
@@ -66,18 +66,16 @@
                                 </div>
 
                                 <div class="classy-menu">
-
                                     <div class="classycloseIcon">
                                         <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                                     </div>
 
                                     <div class="classynav">
                                         <ul>
-                                            <li class="active"><a href="Home.aspx" ng-click="getNews()">મુખ્ય પાનું</a></li>
+                                            <li class="active"><a href="Home.aspx" ng-click="getCategory()">મુખ્ય પાનું</a></li>
                                             <li ng-repeat="cat in category"><a href="#" ng-click="getNewsByCate(cat.id)">{{cat.name}}</a></li>
                                         </ul>
                                     </div>
-
                                 </div>
                             </nav>
                         </div>
@@ -107,11 +105,25 @@
 
                         <div class="col-12 col-lg-4">
                             <div class="hero-add">
-                                <a href="#">
-                                    <img src="img/bg-img/hero-add.gif" alt=""></a>
+                                <div id="Banner" class="ticker">
+                                    <ul>
+
+                                        <li><a href="{{Add[0].add_link}}">
+                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[0].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                        <li><a href="{{Add[1].add_link}}">
+                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[1].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                        <li><a href="{{Add[2].add_link}}">
+                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[2].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                        <li><a href="{{Add[3].add_link}}">
+                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[3].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                        <li><a href="{{Add[4].add_link}}">
+                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[4].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
             </div>
         </div>
@@ -127,7 +139,6 @@
                         <div class="row">
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="footer-widget-area mt-80">
-
                                     <div class="footer-logo">
                                         <a href="Home.aspx">
                                             <img src="img/core-img/sm_footer_logo.png" />
@@ -136,7 +147,6 @@
                                         <ul class="list">
                                             <li><a href="email:">saurashtramirrornews@gmail.com</a></li>
                                             <li><a href="tel:+917359999947">+91 73599 99947</a></li>
-                                            <li><a href=""></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -146,17 +156,19 @@
                                 <div class="footer-widget-area mt-80">
 
                                     <h4 class="widget-title">Our Vision</h4>
-                                    <p><strong>The vision of the channel is <br /> "' Darek Pal Na Sachot Samachar "</strong></p>
-                                    
+                                    <p><strong>The vision of the channel is
+                                        <br />
+                                        " Darek Pal Na Sachot Samachar "</strong></p>
+
                                 </div>
                             </div>
 
                             <div class="col-12 col-sm-4 col-lg-2">
                                 <div class="footer-widget-area mt-80">
-                                    <p><b>Owner-Editor</b></p> 
+                                    <p><b>Owner-Editor</b></p>
                                     <p>Sohil Thakkar</p>
                                     <p><b>Managing Director</b></p>
-                                    <p>Karan Thakkar </p> 
+                                    <p>Karan Thakkar </p>
                                 </div>
                             </div>
 
@@ -166,10 +178,16 @@
                                     <h4 class="widget-title">Follow On</h4>
 
                                     <ul class="list">
-                                        <li><a href="https://www.facebook.com/pages/category/Media-News-Company/Saurashtra-Mirror-106407867732090/"><img src="img/core-img/facebook.png" width="30" height="30" /> &nbsp; Facebook </a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCYfA_DzrDN9njhC55zIGJhw"><img src="img/core-img/youtube.png" width="30" height="30" /> &nbsp; Youtube </a></li>
-                                        <li><a href="https://www.instagram.com/saurashtramirror/"><img src="img/core-img/insta.png" width="30" height="30" /> &nbsp; Instagram </a></li>
-                                        
+                                        <li><a href="https://www.facebook.com/pages/category/Media-News-Company/Saurashtra-Mirror-106407867732090/">
+                                            <img src="img/core-img/facebook.png" width="30" height="30" />
+                                            &nbsp; Facebook </a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCYfA_DzrDN9njhC55zIGJhw">
+                                            <img src="img/core-img/youtube.png" width="30" height="30" />
+                                            &nbsp; Youtube </a></li>
+                                        <li><a href="https://www.instagram.com/saurashtramirror/">
+                                            <img src="img/core-img/insta.png" width="30" height="30" />
+                                            &nbsp; Instagram </a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -180,9 +198,13 @@
                                     <h4 class="widget-title">Our App</h4>
 
                                     <ul class="list">
-                                        <li><a href="#"><img src="img/core-img/playstore.png" width="30" height="30" /> &nbsp; Facebook </a></li>
-                                        <li><a href="#"><img src="img/core-img/iphone.png" width="30" height="30" /> &nbsp; Youtube </a></li>
-                                        
+                                        <li><a href="#">
+                                            <img src="img/core-img/playstore.png" width="30" height="30" />
+                                            &nbsp; Facebook </a></li>
+                                        <li><a href="#">
+                                            <img src="img/core-img/iphone.png" width="30" height="30" />
+                                            &nbsp; Youtube </a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -196,12 +218,12 @@
                             <div class="col-7">
                                 <p>
                                     Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
-                                All Rights Reserved. 
+                                    All Rights Reserved. 
                                 </p>
                             </div>
                             <div class="col-5">
-                                <p> 
-                                    <a href="tel:+918128382487"> Develop By : SJ infotech &nbsp; || &nbsp; Contact : +91 81283 82487 </a>
+                                <p>
+                                    <a href="tel:+918128382487">Develop By : SJ infotech &nbsp; || &nbsp; Contact : +91 81283 82487 </a>
                                 </p>
                             </div>
                         </div>

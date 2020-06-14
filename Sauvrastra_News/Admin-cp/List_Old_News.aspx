@@ -71,7 +71,7 @@
                             </div>
                             <br />
                             <div>
-                                <asp:GridView ID="grd_old_news" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" OnPageIndexChanging="grd_old_news_PageIndexChanging"
+                                <asp:GridView ID="grd_old_news" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnPageIndexChanging="grd_old_news_PageIndexChanging"
                                     OnRowCommand="grd_old_news_RowCommand" EmptyDataText="No Record Found." DataKeyNames="nm_id" CssClass="table table-striped table-advance table-hover">
                                     <PagerTemplate>
                                         <table>
@@ -108,6 +108,11 @@
                                                 <asp:Label ID="lbl_cat" runat="server" Text='<%#Eval("cat_name") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
+                                         <asp:TemplateField HeaderText="News Date" HeaderStyle-CssClass="col-sm-1">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lbl_date" runat="server" Text='<%#Eval("nm_date") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Head Line" HeaderStyle-CssClass="col-sm-3">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_head" runat="server" Text='<%#Eval("nm_head_line") %>'></asp:Label>

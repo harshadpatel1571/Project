@@ -33,7 +33,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <div class="form-group">
-                                    <label for="cname" class="control-label col-lg-3">Catagory Name <span class="required">*</span></label>
+                                    <label for="cname" class="control-label col-lg-3"><b>Catagory Name</b><span class="required">*</span></label>
                                     <div class="col-lg-3">
                                         <asp:TextBox runat="server" ID="txt_catagory" CssClass="form-control" require="true"></asp:TextBox>
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_catagory" 

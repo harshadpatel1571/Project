@@ -37,7 +37,26 @@ public class commands
             connection.connection_close();
         }
     }
-    
+
+    // add by : Harshad
+    public static DataSet DataExecuteQuery(SqlCommand cmd)
+    {
+        try
+        {
+            SqlConnection cn = connection.connection_open();
+            DataSet ds = new DataSet();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cn;
+            SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+            adpt.Fill(ds);
+            return ds;
+        }
+        finally
+        {
+            connection.connection_close();
+        }
+    }
+
     public static int NonExecuteQuery(SqlCommand cmd)
     {
         try

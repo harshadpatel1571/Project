@@ -32,15 +32,16 @@
                                 </div>
                                 <div class='col-sm-3'>
                                     <b>Past Youtube Link : </b>
-                                   <asp:TextBox runat="server" ID="txt_link" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_link" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-sm-4"><br />
+                                <div class="col-sm-4">
+                                    <br />
                                     <asp:Button runat="server" Text="Add Link" ID="btn_add" CssClass="btn btn-primary col-sm-4" OnClick="btn_add_Click" />
                                 </div>
                             </div>
                             <br />
                             <div>
-                                <asp:GridView ID="grd_links" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" OnPageIndexChanging="grd_links_PageIndexChanging"
+                                <asp:GridView ID="grd_links" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnPageIndexChanging="grd_links_PageIndexChanging"
                                     OnRowCommand="grd_links_RowCommand" EmptyDataText="No Data Found" DataKeyNames="ym_id" CssClass="table table-striped table-advance table-hover">
                                     <PagerTemplate>
                                         <table>
@@ -84,13 +85,12 @@
                                                 <asp:Label ID="lbl_date" runat="server" Text='<%#Eval("ym_date") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                       
+
                                         <asp:TemplateField HeaderText="Actions" HeaderStyle-CssClass="col-sm-3">
                                             <ItemTemplate>
                                                 <asp:ImageButton runat="server" ImageUrl='<%#Eval("ym_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("ym_id") %>' />
                                                 &nbsp; | &nbsp;
-                                <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("ym_id") %>' />
-                                               
+                                                <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("ym_id") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

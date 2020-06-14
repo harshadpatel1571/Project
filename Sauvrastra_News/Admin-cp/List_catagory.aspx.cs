@@ -34,6 +34,7 @@ public partial class List_catagory : System.Web.UI.Page
         {
             grd_catagory.DataSource = dt;
             grd_catagory.DataBind();
+            this.bind_ddl_number();
         }
     }
 
@@ -63,5 +64,43 @@ public partial class List_catagory : System.Web.UI.Page
                 Bind_Data();
             }
         }
+    }
+
+    public void bind_ddl_number()
+    {
+        GridViewRow gvrPager = grd_catagory.BottomPagerRow;
+        if (gvrPager == null) return;
+
+        DropDownList ddlPages = (DropDownList)gvrPager.Cells[0].FindControl("ddpage");
+        Label lblPageCount = (Label)gvrPager.Cells[0].FindControl("lblcount");
+
+        if (ddlPages != null)
+        {
+            ddlPages.Items.Clear();
+            for (int i = 0; i < grd_catagory.PageCount; i++)
+            {
+                ListItem lstItem = new ListItem((i + 1).ToString());
+                if (i == grd_catagory.PageIndex)
+                    lstItem.Selected = true;
+                ddlPages.Items.Add(lstItem);
+            }
+        }
+
+        if (lblPageCount != null)
+            lblPageCount.Text = grd_catagory.PageCount.ToString();
+    }
+
+    protected void ddpage_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        GridViewRow gvrPager = grd_catagory.BottomPagerRow;
+        DropDownList ddlPages = (DropDownList)gvrPager.Cells[0].FindControl("ddpage");
+        grd_catagory.PageIndex = ddlPages.SelectedIndex;
+        grd_catagory.DataBind();
+        this.Bind_Data();
+    }
+    protected void grd_catagory_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        grd_catagory.PageIndex = e.NewPageIndex;
+        this.Bind_Data();
     }
 }

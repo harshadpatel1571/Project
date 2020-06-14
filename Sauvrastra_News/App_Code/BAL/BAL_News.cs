@@ -16,6 +16,14 @@ public class BAL_News
         // TODO: Add constructor logic here
         //
     }
+    public static DataSet GetFirstData()
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "Get_FirstLoadData";
+        DataSet ds = new DataSet();
+        return ds = commands.DataExecuteQuery(cmd);
+
+    }
 
     public static DataTable Get_catagory_for_ddl()
     {
@@ -78,13 +86,6 @@ public class BAL_News
         return dt = commands.ExecuteQuery(cmd);
     }
 
-    public static DataTable GetNews()
-    {
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "GetHomePageData";
-        return commands.ExecuteQuery(cmd);
-    }
-
     public static DataTable GetNewsbyCategory(int Cat_ID)
     {
         SqlCommand cmd = new SqlCommand();
@@ -92,4 +93,46 @@ public class BAL_News
         cmd.Parameters.AddWithValue("@cat_id", Cat_ID);
         return commands.ExecuteQuery(cmd);
     }
+
+    // for Add 
+    public static int Insert_add(string links, int id, int cat_id)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "insert_update_add";
+        cmd.Parameters.AddWithValue("@link", links);
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@cat_id", cat_id);
+        cmd.Parameters.Add("@ret_id", SqlDbType.Int);
+        cmd.Parameters["@ret_id"].Direction = ParameterDirection.Output;
+        int data = commands.NonExecuteQuery(cmd);
+        return Convert.ToInt32(cmd.Parameters["@ret_id"].Value);
+    }
+
+    public static int Add_Image_Update(int id, string image)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "add_image_insert_update";
+        cmd.Parameters.AddWithValue("@image", image);
+        cmd.Parameters.AddWithValue("@id", id);
+        return commands.NonExecuteQuery(cmd);
+    }
+
+    public static DataTable get_add_data(int id, int query)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "get_add_data";
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@query", query);
+        return commands.ExecuteQuery(cmd);
+    }
+
+    public static int add_delete_status(int id, int query)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "delete_status_add";
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@query", query);
+        return commands.NonExecuteQuery(cmd);
+    }
+
 }

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_cp_List_News_Master : System.Web.UI.Page
+public partial class Admin_cp_List_add : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             this.check_session();
-            Session.Remove("update_news_id");
+            Session.Remove("update_add_id");
             this.Bind_Data();
         }
     }
@@ -28,7 +29,7 @@ public partial class Admin_cp_List_News_Master : System.Web.UI.Page
 
     public void Bind_Data()
     {
-        DataTable dt = BAL_News.get_news_data(0,1);
+        DataTable dt = BAL_News.get_add_data(0, 1);
         if (dt.Rows.Count > 0)
         {
             grd_news.DataSource = dt;
@@ -42,23 +43,31 @@ public partial class Admin_cp_List_News_Master : System.Web.UI.Page
 
         if (e.CommandName == "btn_Edit")
         {
-            Session["update_news_id"] = e.CommandArgument.ToString();
-            Response.Redirect("Form_News_Master.aspx");
+            Session["update_add_id"] = e.CommandArgument.ToString();
+            Response.Redirect("Form_add.aspx");
         }
 
         if (e.CommandName == "btn_Delete")
         {
-            int delete = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 1);
-            if (delete > 0)
+            DataTable data = BAL_News.get_add_data(Convert.ToInt32(e.CommandArgument), 2);
+            string file_name = data.Rows[0]["add_image"].ToString();
+            string path = Server.MapPath("../Admin-cp/img/add_image/" + file_name);
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
             {
-                Response.Write("<script> alert('Delete Sucess..') </script>");
-                Bind_Data();
+                file.Delete();
+                int delete = BAL_News.add_delete_status(Convert.ToInt32(e.CommandArgument), 1);
+                if (delete > 0)
+                {
+                    Response.Write("<script> alert('Delete Sucess..') </script>");
+                    Bind_Data();
+                }
             }
         }
-
+        
         if (e.CommandName == "btn_Status")
         {
-            int status = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 2);
+            int status = BAL_News.add_delete_status(Convert.ToInt32(e.CommandArgument), 2);
             if (status > 0)
             {
                 Bind_Data();

@@ -21,7 +21,7 @@
                             <div class="col-sm-10">
                             </div>
                             <div class="col-sm-2" style="text-align: right;">
-                                <input type="button" id="btnClose" value="બંધ" ng-click="ok()" style="color: red" />
+                                <input type="button" id="btnClose" value="Close" ng-click="ok()" style="color: red" />
                                 <%--<label class="text-danger" ng-click="ok()">Close</label>--%>
                             </div>
                         </div>

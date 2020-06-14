@@ -44,14 +44,6 @@ public class BAL_Catagory
         cmd.Parameters.AddWithValue("@query", query);
         return commands.NonExecuteQuery(cmd);
     }
-    public static DataTable get_Category()
-    {
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "get_catagory_for_dropdown";
-        return commands.ExecuteQuery(cmd);
-    }
-
-    // code for add youtube links
 
     public static int insert_youtube_link(string cat_name)
     {
@@ -77,13 +69,6 @@ public class BAL_Catagory
         return commands.NonExecuteQuery(cmd);
     }
 
-    public static DataTable get_active_Link()
-    {
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "get_active_youtube_links";
-        return commands.ExecuteQuery(cmd);
-    }
-
     // statustic for DashBoard
     public static DataTable statustic()
     {
@@ -91,5 +76,12 @@ public class BAL_Catagory
         cmd.CommandText = "Get_Statustic_for_DashBoard";
         return commands.ExecuteQuery(cmd);
     }
-    
+
+    //public static DataTable get_active_Add()
+    //{
+    //    SqlCommand cmd = new SqlCommand();
+    //    cmd.CommandText = "GetHomeAdd";
+    //    return commands.ExecuteQuery(cmd);
+    //}
+
 }

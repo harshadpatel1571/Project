@@ -283,13 +283,13 @@
                                     <span class="menu-arrow arrow_carrot-right"></span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a class="" href="List_catagory.aspx">News Catagory</a></li>
-                                    <li><a class="" href="List_News_Master.aspx"><span>Today News</span></a></li>
-                                    <li><a class="" href="List_Old_News.aspx">Old News</a></li>
-                                    <li><a class="" href="Form_video_links.aspx">Youtube News</a></li>
+                                    <li><a class="fa fa-cubes" href="List_catagory.aspx"> &nbsp; News Catagory</a></li>
+                                    <li><a class="fa fa-book" href="List_News_Master.aspx"><span> &nbsp; Today News</span></a></li>
+                                    <li><a class="fa fa-history" href="List_Old_News.aspx"> &nbsp; Old News</a></li>
+                                    <li><a class="fa fa-youtube" href="Form_video_links.aspx"> &nbsp; Youtube News</a></li>
+                                    <li><a class="fa fa-picture-o" href="List_add.aspx"> &nbsp; Advertisement</a></li>
                                 </ul>
                             </li>
-
                           <%--  <li class="">
                                 <a class="" href="Form_Contact_Master.aspx">
                                     <i class="icon_contacts"></i>

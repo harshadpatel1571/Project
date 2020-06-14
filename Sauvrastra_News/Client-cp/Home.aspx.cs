@@ -16,20 +16,11 @@ public partial class Client_cp_Home : System.Web.UI.Page
     }
 
     [WebMethod]
-    public static string GetCategory()
+    public static string firstPageData()
     {
         string outdata;
-        DataTable dt_BranchWise = BAL_Catagory.get_Category();
-        outdata = JsonConvert.SerializeObject(dt_BranchWise);
-        return outdata;
-    }
-
-    [WebMethod]
-    public static string GetHomePageNews()
-    {
-        string outdata;
-        DataTable dt_BranchWise = BAL_News.GetNews();
-        outdata = JsonConvert.SerializeObject(dt_BranchWise);
+        DataSet ds_firstData = BAL_News.GetFirstData();
+        outdata = JsonConvert.SerializeObject(ds_firstData);
         return outdata;
     }
 
@@ -39,16 +30,6 @@ public partial class Client_cp_Home : System.Web.UI.Page
         string outdata;
         DataTable dt_BranchWise = BAL_News.GetNewsbyCategory(Cat_ID);
         outdata = JsonConvert.SerializeObject(dt_BranchWise);
-        return outdata;
-    }
-
-    // add by : Harshad Koradiya
-    [WebMethod]
-    public static string GetYouTubeLinks()
-    {
-        string outdata;
-        DataTable dt_links = BAL_Catagory.get_active_Link();
-        outdata = JsonConvert.SerializeObject(dt_links);
         return outdata;
     }
 }
