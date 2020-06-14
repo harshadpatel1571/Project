@@ -123,7 +123,7 @@
                                                 <asp:Label ID="lbl_short" runat="server" Text='<%#Eval("nm_short_desc") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="View Image" HeaderStyle-CssClass="col-sm-2">
+                                        <asp:TemplateField HeaderText="Image" HeaderStyle-CssClass="col-sm-2">
                                             <ItemTemplate>
                                                 <a href='<%#Eval("nm_image") %>'>View</a>
                                             </ItemTemplate>

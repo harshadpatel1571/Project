@@ -70,18 +70,11 @@ public class BAL_Catagory
     }
 
     // statustic for DashBoard
-    public static DataTable statustic()
+    public static DataSet statustic()
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "Get_Statustic_for_DashBoard";
-        return commands.ExecuteQuery(cmd);
+        DataSet ds = new DataSet();
+        return ds = commands.DataExecuteQuery(cmd);
     }
-
-    //public static DataTable get_active_Add()
-    //{
-    //    SqlCommand cmd = new SqlCommand();
-    //    cmd.CommandText = "GetHomeAdd";
-    //    return commands.ExecuteQuery(cmd);
-    //}
-
 }

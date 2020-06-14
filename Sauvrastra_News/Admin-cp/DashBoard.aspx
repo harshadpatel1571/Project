@@ -50,8 +50,8 @@
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                     <div class="info-box green-bg">
                         <i class="fa fa-cubes"></i>
-                        <div class="count">0.00</div>
-                        <div class="title">Adds</div>
+                        <div class="count"><asp:Label runat="server" ID="lbl_add"></asp:Label></div>
+                        <div class="title">Total Advertisement</div>
                     </div>
                     <!--/.info-box-->
                 </div>

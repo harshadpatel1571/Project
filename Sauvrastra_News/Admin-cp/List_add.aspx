@@ -81,7 +81,7 @@
                                             <asp:Label ID="lbl_link" runat="server" Text='<%#Eval("add_link") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="View Image" HeaderStyle-CssClass="col-sm-1">
+                                    <asp:TemplateField HeaderText="Image" HeaderStyle-CssClass="col-sm-1">
                                         <ItemTemplate>
                                             <a href='<%#Eval("add_image") %>'>View</a>
                                         </ItemTemplate>

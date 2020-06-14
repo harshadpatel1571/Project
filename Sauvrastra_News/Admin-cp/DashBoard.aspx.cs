@@ -21,18 +21,19 @@ public partial class Admin_cp_DashBoard : System.Web.UI.Page
     {
         if (Session["user_name"] == "" || Session["user_name"] == null)
         {
-            Response.Redirect("Login");
+            Response.Redirect("Admin_Login.aspx");
         }
     }
 
     public void statustic()
     {
-        DataTable dt = BAL_Catagory.statustic();
-        if(dt.Rows.Count > 0)
+        DataSet ds = BAL_Catagory.statustic();
+        if(ds.Tables.Count > 0)
         {
-            lbl_news.Text = dt.Rows[0]["Total_News"].ToString();
-            lbl_catagory.Text = dt.Rows[1]["Total_News"].ToString();
-            lbl_links.Text = dt.Rows[2]["Total_News"].ToString();
+            lbl_news.Text = ds.Tables[0].Rows[0]["Total_News"].ToString();
+            lbl_catagory.Text = ds.Tables[1].Rows[0]["Total_Catagory"].ToString();
+            lbl_links.Text = ds.Tables[2].Rows[0]["Total_Youtube"].ToString();
+            lbl_add.Text = ds.Tables[3].Rows[0]["Total_Add"].ToString();
         }
     }
 }
