@@ -11,14 +11,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
         $(document).ready(function () {
+            //Disable cut copy paste
             $('body').bind('cut copy paste', function (e) {
                 e.preventDefault();
-            })
-            $('body').on("contextmenu", function (e) {
+            });
+
+            //Disable mouse right click
+            $("body").on("contextmenu", function (e) {
                 return false;
-            })
-        })
+            });
+        });
     </script>
+
     <div class="featured-post-area">
         <div class="container">
             <div class="row">
@@ -122,8 +126,11 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
-        <br /><br /><br /> <br /><br />
     </div>
 
 </asp:Content>

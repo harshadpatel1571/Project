@@ -9,6 +9,6 @@ public partial class Client_cp_client_mst : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        year.Text = DateTime.Now.Year.ToString();
     }
 }

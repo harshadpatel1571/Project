@@ -9,17 +9,11 @@
 
     <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
-    <script src="../JS/angular.min.js"></script>
-    <script src="../JS/jquery.min.js"></script>
-    <script src="../JS/bootstrap.min.js"></script>
-    <script src="../JS/angular-animate.js"></script>
-    <script src="../JS/angular-sanitize.js"></script>
-    <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
-    <script src="../JS/NavigationCrtl.js"></script>
 
     <title>Sauvrastra &nbsp; Mirror</title>
 
     <link rel="icon" href="img/core-img/sm_footer_logo.png" />
+
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <form id="form1" runat="server" ng-init="getCategory()">
@@ -72,7 +66,7 @@
 
                                     <div class="classynav">
                                         <ul>
-                                            <li class="active"><a href="Home.aspx" ng-click="getCategory()">મુખ્ય પાનું</a></li>
+                                            <li class="active"><a href="Home.aspx" ng-click="getCategory()">{{homepage}}</a></li>
                                             <li ng-repeat="cat in category"><a href="#" ng-click="getNewsByCate(cat.id)">{{cat.name}}</a></li>
                                         </ul>
                                     </div>
@@ -88,7 +82,7 @@
                         <div class="col-12 col-lg-8">
                             <div class="breaking-news-area d-flex align-items-center">
                                 <div class="news-title">
-                                    <p><b>બ્રેકિંગ ન્યુઝ</b></p>
+                                    <p><b>{{breakingNews}}</b></p>
                                 </div>
                                 <div id="breakingNewsTicker" class="ticker">
                                     <ul>
@@ -100,7 +94,6 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="col-12 col-lg-4">
@@ -123,7 +116,6 @@
                             </div>
                         </div>
                     </div>
-                    <br />
                 </div>
             </div>
         </div>
@@ -133,7 +125,6 @@
         </div>
         <div>
             <footer class="footer-area">
-
                 <div class="main-footer-area">
                     <div class="container">
                         <div class="row">
@@ -156,9 +147,11 @@
                                 <div class="footer-widget-area mt-80">
 
                                     <h4 class="widget-title">Our Vision</h4>
-                                    <p><strong>The vision of the channel is
+                                    <p>
+                                        <strong>The vision of the channel is
                                         <br />
-                                        " Darek Pal Na Sachot Samachar "</strong></p>
+                                            " Darek Pal Na Sachot Samachar "</strong>
+                                    </p>
 
                                 </div>
                             </div>
@@ -217,7 +210,8 @@
                         <div class="row h-100 align-items-center">
                             <div class="col-7">
                                 <p>
-                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
+                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020 -
+                                    <asp:Label runat="server" ID="year"></asp:Label>
                                     All Rights Reserved. 
                                 </p>
                             </div>
@@ -231,17 +225,16 @@
                 </div>
             </footer>
 
-            <script type="text/javascript">
-                var currentYear = (new Date).getFullYear();
-                $(document).ready(function () {
-                    $("#year").text((new Date).getFullYear());
-                });
-            </script>
-            <script src="js/jquery/jquery-2.2.4.min.js"></script>
-            <script src="js/bootstrap/bootstrap.min.js"></script>
-            <script src="js/bootstrap/popper.min.js"></script>
-            <script src="js/plugins/plugins.js"></script>
-            <script src="js/active.js"></script>
+            <script src="../JS/angular.min.js"></script>
+            <script src="../JS/jquery.min.js"></script>
+            <script src="../JS/bootstrap.min.js"></script>
+            <script src="../JS/angular-animate.js"></script>
+            <script src="../JS/angular-sanitize.js"></script>
+            <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
+            <script src="../JS/NavigationCrtl.js"></script>
+            <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
+            <script src="../JS/plugins/plugins.js"></script>
+            <script src="../JS/active.js"></script>
 
         </div>
     </form>

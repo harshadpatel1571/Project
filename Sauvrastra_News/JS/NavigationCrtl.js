@@ -1,5 +1,9 @@
 ﻿var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
+
+    $scope.homepage = 'મુખ્ય પાનું';
+    $scope.breakingNews = 'બ્રેકિંગ ન્યુઝ';
+
     $scope.getCategory = function () {
         var data = {};
         $http.post("Home.aspx/firstPageData", { responseType: 'json' })
