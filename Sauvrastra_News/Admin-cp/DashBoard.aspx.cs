@@ -30,10 +30,10 @@ public partial class Admin_cp_DashBoard : System.Web.UI.Page
         DataSet ds = BAL_Catagory.statustic();
         if(ds.Tables.Count > 0)
         {
-            lbl_news.Text = ds.Tables[0].Rows[0]["Total_News"].ToString();
-            lbl_catagory.Text = ds.Tables[1].Rows[0]["Total_Catagory"].ToString();
-            lbl_links.Text = ds.Tables[2].Rows[0]["Total_Youtube"].ToString();
-            lbl_add.Text = ds.Tables[3].Rows[0]["Total_Add"].ToString();
+            //lbl_news.Text = ds.Tables[0].Rows[0]["Total_News"].ToString();
+            //lbl_catagory.Text = ds.Tables[1].Rows[0]["Total_Catagory"].ToString();
+            //lbl_links.Text = ds.Tables[2].Rows[0]["Total_Youtube"].ToString();
+            //lbl_add.Text = ds.Tables[3].Rows[0]["Total_Add"].ToString();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="client_mst.master.cs" Inherits="Client_cp_client_mst" %>
-
+  
 <!DOCTYPE html>
 
 <html>
