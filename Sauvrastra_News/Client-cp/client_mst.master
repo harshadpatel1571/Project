@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="client_mst.master.cs" Inherits="Client_cp_client_mst" %>
-  
+
 <!DOCTYPE html>
 
 <html>
@@ -11,9 +11,9 @@
     <link href="style.css" rel="stylesheet" />
 
     <title>Sauvrastra &nbsp; Mirror</title>
-
-    <link rel="icon" href="img/core-img/sm_footer_logo.png" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="iYWMnemGdf0dY_ACo6jmqL2nhykLrtjxlZHgmZJckF0" />
+    <link rel="icon" href="../Admin-cp/img/buttons/Logo.png" />
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <form id="form1" runat="server" ng-init="getCategory()">
@@ -27,7 +27,7 @@
 
                                     <div class="logo">
                                         <a href="Home.aspx">
-                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo.png" Height="350" />
+                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo1.png" Height="50" />
                                         </a>
                                     </div>
 
@@ -52,7 +52,7 @@
 
                                 <div class="logo">
                                     <a href="Home.aspx">
-                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo.png" Height="300" /></a>
+                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo1.png" /></a>
                                 </div>
 
                                 <div class="classy-navbar-toggler">
@@ -94,10 +94,11 @@
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="col-12 col-lg-4">
-                            <div class="hero-add">
+                            <div class="hero-add" style="margin-top: 10px;">
                                 <div id="Banner" class="ticker">
                                     <ul>
 
@@ -116,6 +117,7 @@
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
             </div>
         </div>
@@ -125,6 +127,7 @@
         </div>
         <div>
             <footer class="footer-area">
+
                 <div class="main-footer-area">
                     <div class="container">
                         <div class="row">
@@ -193,10 +196,10 @@
                                     <ul class="list">
                                         <li><a href="#">
                                             <img src="img/core-img/playstore.png" width="30" height="30" />
-                                            &nbsp; Facebook </a></li>
+                                            &nbsp; Playstore </a></li>
                                         <li><a href="#">
                                             <img src="img/core-img/iphone.png" width="30" height="30" />
-                                            &nbsp; Youtube </a></li>
+                                            &nbsp; iphone </a></li>
 
                                     </ul>
                                 </div>
@@ -210,8 +213,7 @@
                         <div class="row h-100 align-items-center">
                             <div class="col-7">
                                 <p>
-                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020 -
-                                    <asp:Label runat="server" ID="year"></asp:Label>
+                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
                                     All Rights Reserved. 
                                 </p>
                             </div>
@@ -225,6 +227,13 @@
                 </div>
             </footer>
 
+            <script type="text/javascript">
+                var currentYear = (new Date).getFullYear();
+                $(document).ready(function () {
+                    $("#year").text((new Date).getFullYear());
+                });
+            </script>
+
             <script src="../JS/angular.min.js"></script>
             <script src="../JS/jquery.min.js"></script>
             <script src="../JS/bootstrap.min.js"></script>
@@ -232,7 +241,10 @@
             <script src="../JS/angular-sanitize.js"></script>
             <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
             <script src="../JS/NavigationCrtl.js"></script>
+
             <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
+            <%--<script src="js/bootstrap/bootstrap.min.js"></script>
+            <script src="js/bootstrap/popper.min.js"></script>--%>
             <script src="../JS/plugins/plugins.js"></script>
             <script src="../JS/active.js"></script>
 

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client-cp/client_mst.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Client_cp_Home" %>
-  
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
         .modal.fade.in {
@@ -11,33 +11,29 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
         $(document).ready(function () {
-            //Disable cut copy paste
             $('body').bind('cut copy paste', function (e) {
                 e.preventDefault();
-            });
-
-            //Disable mouse right click
-            $("body").on("contextmenu", function (e) {
+            })
+            $('body').on("contextmenu", function (e) {
                 return false;
-            });
-        });
+            })
+        })
     </script>
-
     <div class="featured-post-area">
         <div class="container">
             <div class="row">
-                <div class="col-4" ng-repeat="new in News">
+                <div class="col-12 col-sm-6 col-md-4" ng-repeat="new in News">
 
                     <div class="single-blog-post featured-post-2">
-                        <div class="post-thumb">
+                        <div class="post-thumb class="single-video-post"">
                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="340" Height="200" />
                         </div>
                         <div class="post-data">
-                            <div class="row">
-                                <div class="col-7">
+                           <div class="row">
+                                <div class="col-5">
                                     <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}}</a>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-7" style="text-align:right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{new.nm_date}}   </span></b>
                                 </div>
                             </div>
@@ -102,6 +98,7 @@
                 <div class="col-12">
                     <div id="internationalTicker" class="ticker">
                         <ul>
+
                             <li ng-if="FooterAdd.length >= 1">
                                 <a href="{{FooterAdd[0].add_link}}">
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
@@ -126,10 +123,7 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
+            <br /><br /><br /><br />
         </div>
     </div>
 

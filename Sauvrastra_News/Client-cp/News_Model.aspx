@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="News_Model.aspx.cs" Inherits="Client_cp_News_Model" %>
-  
+
 <!DOCTYPE html>
 
 <html>
@@ -42,10 +42,10 @@
                         </div>
                         <div class="post-data">
                             <div class="row">
-                                <div class="col-10">
+                                <div class="col-7">
                                     <a class="post-catagory">{{MainNews.cat_name}}</a>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-5" style="text-align:right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{MainNews.nm_date}}   </span></b>
                                 </div>
                             </div>
