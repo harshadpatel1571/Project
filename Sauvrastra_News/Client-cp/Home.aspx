@@ -96,34 +96,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div id="internationalTicker" class="ticker">
-                        <ul>
-
-                            <li ng-if="FooterAdd.length >= 1">
-                                <a href="{{FooterAdd[0].add_link}}">
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
-                            </li>
-                            <li ng-if="FooterAdd.length >= 2">
-                                <a href="{{FooterAdd[1].add_link}}">
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[1].add_image}}" alt="" Width="1150" Height="150" /></a>
-                            </li>
-                            <li ng-if="FooterAdd.length >= 3">
-                                <a href="{{FooterAdd[2].add_link}}">
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[2].add_image}}" alt="" Width="1150" Height="150" /></a>
-                            </li>
-                            <li ng-if="FooterAdd.length >= 4">
-                                <a href="{{FooterAdd[3].add_link}}">
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[3].add_image}}" alt="" Width="1150" Height="150" /></a>
-                            </li>
-                            <li ng-if="FooterAdd.length >= 5">
-                                <a href="{{FooterAdd[4].add_link}}">
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[4].add_image}}" alt="" Width="1150" Height="150" /></a>
-                            </li>
-                        </ul>
+                     <div class="footer-add">
+                        <div id="internationalTicker" class="ticker">
+                             <ul>
+                                <li ng-if="FooterAdd.length >= 1">
+                                    <a href="{{FooterAdd[0].add_link}}">
+                                        <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
+                                </li>
+                                <li ng-if="FooterAdd.length >= 2">
+                                    <a href="{{FooterAdd[1].add_link}}">
+                                        <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[1].add_image}}" alt="" Width="1150" Height="150" /></a>
+                                </li>
+                                <li ng-if="FooterAdd.length >= 3">
+                                    <a href="{{FooterAdd[2].add_link}}">
+                                        <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[2].add_image}}" alt="" Width="1150" Height="150" /></a>
+                                </li>
+                                <li ng-if="FooterAdd.length >= 4">
+                                    <a href="{{FooterAdd[3].add_link}}">
+                                        <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[3].add_image}}" alt="" Width="1150" Height="150" /></a>
+                                </li>
+                                <li ng-if="FooterAdd.length >= 5">
+                                    <a href="{{FooterAdd[4].add_link}}">
+                                        <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[4].add_image}}" alt="" Width="1150" Height="150" /></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <br /><br /><br /><br />
                 </div>
             </div>
-            <br /><br /><br /><br />
         </div>
     </div>
 

@@ -27,7 +27,7 @@
 
                                     <div class="logo">
                                         <a href="Home.aspx">
-                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo1.png" Height="50" />
+                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/DesctopLogo.png" Height="100"/>
                                         </a>
                                     </div>
 
@@ -52,7 +52,7 @@
 
                                 <div class="logo">
                                     <a href="Home.aspx">
-                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/Logo1.png" /></a>
+                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/MobileLogo.png" Height="60"/></a>
                                 </div>
 
                                 <div class="classy-navbar-toggler">
@@ -123,11 +123,11 @@
         </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
             </asp:ContentPlaceHolder>
         </div>
         <div>
             <footer class="footer-area">
-
                 <div class="main-footer-area">
                     <div class="container">
                         <div class="row">
