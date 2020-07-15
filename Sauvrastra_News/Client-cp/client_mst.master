@@ -213,7 +213,7 @@
                         <div class="row h-100 align-items-center">
                             <div class="col-7">
                                 <p>
-                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020-<span id="year">TEXT</span>
+                                    Saurashtra Mirror || &nbsp; Copyright &nbsp; &copy; &nbsp; Year 2020 - {{date| date:'yyyy'}}
                                     All Rights Reserved. 
                                 </p>
                             </div>
@@ -226,14 +226,7 @@
                     </div>
                 </div>
             </footer>
-
-            <script type="text/javascript">
-                var currentYear = (new Date).getFullYear();
-                $(document).ready(function () {
-                    $("#year").text((new Date).getFullYear());
-                });
-            </script>
-
+         
             <script src="../JS/angular.min.js"></script>
             <script src="../JS/jquery.min.js"></script>
             <script src="../JS/bootstrap.min.js"></script>

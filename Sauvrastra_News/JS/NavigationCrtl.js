@@ -3,6 +3,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
     $scope.homepage = 'મુખ્ય પાનું';
     $scope.breakingNews = 'બ્રેકિંગ ન્યુઝ';
+    $scope.date = new Date();
 
     $scope.getCategory = function () {
         var data = {};

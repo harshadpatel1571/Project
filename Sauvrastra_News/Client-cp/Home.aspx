@@ -9,6 +9,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('body').bind('cut copy paste', function (e) {
@@ -25,15 +26,15 @@
                 <div class="col-12 col-sm-6 col-md-4" ng-repeat="new in News">
 
                     <div class="single-blog-post featured-post-2">
-                        <div class="post-thumb class="single-video-post"">
+                        <div class="post-thumb single-video-post">
                             <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="340" Height="200" />
                         </div>
                         <div class="post-data">
-                           <div class="row">
+                            <div class="row">
                                 <div class="col-5">
                                     <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}}</a>
                                 </div>
-                                <div class="col-7" style="text-align:right">
+                                <div class="col-7" style="text-align: right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{new.nm_date}}   </span></b>
                                 </div>
                             </div>
@@ -96,9 +97,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                     <div class="footer-add">
+                    <div class="footer-add">
                         <div id="internationalTicker" class="ticker">
-                             <ul>
+                            <ul>
                                 <li ng-if="FooterAdd.length >= 1">
                                     <a href="{{FooterAdd[0].add_link}}">
                                         <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
@@ -122,7 +123,10 @@
                             </ul>
                         </div>
                     </div>
-                    <br /><br /><br /><br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>

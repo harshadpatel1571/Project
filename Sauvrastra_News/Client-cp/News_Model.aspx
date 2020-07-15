@@ -9,6 +9,7 @@
     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
+
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
     <br />
@@ -29,12 +30,12 @@
                         <div class="post-thumb" ng-if="MainNews.nm_video_link  != NULL">
                             <a>
                                 <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
-                                <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}"></iframe>
+                                <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen></iframe>
                             </a>
                         </div>
 
                         <div ng-if="MainNews.nm_video_link  == NULL">
-                             <%--class="post-thumb" style="padding-left: 17.5%;"--%>
+                            <%--class="post-thumb" style="padding-left: 17.5%;"--%>
                             <a>
                                 <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="800" Height="300" />
                             </a>
@@ -45,7 +46,7 @@
                                 <div class="col-7">
                                     <a class="post-catagory">{{MainNews.cat_name}}</a>
                                 </div>
-                                <div class="col-5" style="text-align:right">
+                                <div class="col-5" style="text-align: right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{MainNews.nm_date}}   </span></b>
                                 </div>
                             </div>
