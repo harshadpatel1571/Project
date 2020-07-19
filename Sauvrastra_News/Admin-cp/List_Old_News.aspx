@@ -68,6 +68,7 @@
                                     <br />
                                     <asp:Button runat="server" Text="Load" ID="btn_load" CssClass="btn btn-primary col-sm-4" OnClick="btn_load_Click" />
                                 </div>
+                                <br />
                             </div>
                             <br />
                             <div>

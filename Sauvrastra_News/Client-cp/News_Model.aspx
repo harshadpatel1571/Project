@@ -51,7 +51,7 @@
                             <%--class="post-thumb" style="padding-left: 17.5%;"--%>
                             <center>
                                 <a>
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="340" Height="400" />
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="500" Height="400" />
                                 </a>
                             </center>
 

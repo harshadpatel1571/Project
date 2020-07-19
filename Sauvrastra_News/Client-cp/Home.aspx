@@ -26,17 +26,20 @@
                 <div class="col-12 col-sm-6 col-md-4" ng-repeat="new in News">
 
                     <div class="single-blog-post featured-post-2">
-                        <div class="post-thumb single-video-post">
+                        <div class="post-thumb">
                             <center>
-                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="250" Height="280"/>
+                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="355" Height="300"/>
                             </center>
                         </div>
                         <div class="post-data">
                             <div class="row">
-                                <div class="col-5">
-                                    <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}}</a>
+                                <div class="col-4">
+                                    <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}} </a>
                                 </div>
-                                <div class="col-7" style="text-align: right">
+                               <%-- <div class="col-4" style="text-align: inherit;">
+                                    <a class="post-catagory" ng-click="FetchNews(new)">Rajkot </a>
+                                </div>--%>
+                                <div class="col-4" style="text-align: right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{new.nm_date}}   </span></b>
                                 </div>
                             </div>
