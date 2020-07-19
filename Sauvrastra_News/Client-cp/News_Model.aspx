@@ -5,10 +5,23 @@
 <html>
 <head runat="server">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="../JS/angular.min.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
+
+     <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            })
+            $('body').on("contextmenu", function (e) {
+                return false;
+            })
+        })
+    </script>
 
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
@@ -36,9 +49,11 @@
 
                         <div ng-if="MainNews.nm_video_link  == NULL">
                             <%--class="post-thumb" style="padding-left: 17.5%;"--%>
-                            <a>
-                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="800" Height="300" />
-                            </a>
+                            <center>
+                                <a>
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="340" Height="400" />
+                                </a>
+                            </center>
 
                         </div>
                         <div class="post-data">
@@ -50,10 +65,10 @@
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{MainNews.nm_date}}   </span></b>
                                 </div>
                             </div>
-                            <a class="post-title">
-                                <h3>{{MainNews.nm_head_line}}</h3>
+                            <a class="post-title text-primary">
+                                <h3 class="text-primary">{{MainNews.nm_head_line}}</h3>
                             </a>
-                            <div class="post-meta">
+                            <div class="post-meta" style="overflow:scroll; height:250px;">
                                 <b>{{MainNews.nm_full_desc}} </b>
                             </div>
                         </div>

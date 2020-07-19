@@ -6,7 +6,7 @@
 <head runat="server">
 
     <title>Sauvrastra Mirror</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="css/elegant-icons-style.css" rel="stylesheet" />

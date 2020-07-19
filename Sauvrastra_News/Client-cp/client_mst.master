@@ -10,8 +10,9 @@
     <link href="../JS/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 
-    <title>Sauvrastra &nbsp; Mirror</title>
+    <title>saurashtra &nbsp; Mirror</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="height=device-height, initial-scale=1">
     <meta name="google-site-verification" content="iYWMnemGdf0dY_ACo6jmqL2nhykLrtjxlZHgmZJckF0" />
     <link rel="icon" href="../Admin-cp/img/buttons/Logo.png" />
 </head>

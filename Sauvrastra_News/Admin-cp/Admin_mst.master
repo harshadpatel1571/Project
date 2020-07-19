@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title>Saurashtra Mirror - Admin</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
@@ -266,7 +266,7 @@
 
                 <!--sidebar start-->
                 <aside>
-                    <div id="sidebar" class="nav-collapse ">
+                    <div id="sidebar" class="nav-collapse">
                         <!-- sidebar menu start-->
                         <ul class="sidebar-menu">
                             <li class="">
@@ -288,6 +288,16 @@
                                     <li><a class="fa fa-history" href="List_Old_News.aspx"> &nbsp; Old News</a></li>
                                     <li><a class="fa fa-youtube" href="Form_video_links.aspx"> &nbsp; Youtube News</a></li>
                                     <li><a class="fa fa-picture-o" href="List_add.aspx"> &nbsp; Advertisement</a></li>
+                                </ul>
+                            </li>
+                             <li class="sub-menu">
+                                <a href="javascript:;" class="">
+                                    <i class="icon_genius"></i>
+                                    <span>Setting</span>
+                                    <span class="menu-arrow arrow_carrot-right"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="fa fa-circle-o-notch" href="#"> &nbsp; Manage Menu</a></li>
                                 </ul>
                             </li>
                           <%--  <li class="">

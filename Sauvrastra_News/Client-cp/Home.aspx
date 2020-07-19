@@ -27,7 +27,9 @@
 
                     <div class="single-blog-post featured-post-2">
                         <div class="post-thumb single-video-post">
-                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="340" Height="200" />
+                            <center>
+                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="250" Height="280"/>
+                            </center>
                         </div>
                         <div class="post-data">
                             <div class="row">
@@ -39,7 +41,7 @@
                                 </div>
                             </div>
                             <a class="post-title" ng-click="FetchNews(new)">
-                                <h3>{{new.nm_head_line}}</h3>
+                                <h3 class="text-primary">{{new.nm_head_line}}</h3>
                             </a>
                             <div class="post-meta" ng-click="FetchNews(new)">
                                 <b>{{new.nm_short_desc}} </b>

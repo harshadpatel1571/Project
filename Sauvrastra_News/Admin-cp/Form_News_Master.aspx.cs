@@ -84,7 +84,7 @@ public partial class Admin_cp_Form_News_Master : System.Web.UI.Page
         {
             string str = img_news.FileName;
             var fileExt = System.IO.Path.GetExtension(img_news.FileName).Substring(1);
-            if (fileExt == "jpeg" || fileExt == "jpg")
+            if (fileExt == "jpeg" || fileExt == "jpg" || fileExt == "png")
             {
                 img_news.PostedFile.SaveAs(Server.MapPath("../Admin-cp/img/news_image/" + id + "." + fileExt));
                 int image_save = BAL_News.Image_Update(id, id + "." + fileExt);
