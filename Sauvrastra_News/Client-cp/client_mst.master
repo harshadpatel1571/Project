@@ -12,7 +12,6 @@
 
     <title>saurashtra &nbsp; Mirror</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <meta name="viewport" content="height=device-height, initial-scale=1">
     <meta name="google-site-verification" content="iYWMnemGdf0dY_ACo6jmqL2nhykLrtjxlZHgmZJckF0" />
     <link rel="icon" href="../Admin-cp/img/buttons/Logo.png" />
 </head>
@@ -99,7 +98,7 @@
                         </div>
 
                         <div class="col-12 col-lg-4">
-                            <div class="hero-add" style="margin-top: 10px;">
+                            <div class="hero-add">
                                 <div id="Banner" class="ticker">
                                     <ul>
 

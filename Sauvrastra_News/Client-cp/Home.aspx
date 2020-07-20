@@ -28,7 +28,7 @@
                     <div class="single-blog-post featured-post-2">
                         <div class="post-thumb">
                             <center>
-                                <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="355" Height="300"/>
+                                <asp:Image runat="server" CssClass="img-responsive" ImageUrl="../Admin-cp/img/news_image/{{new.nm_image}}" alt="" ng-click="FetchNews(new)" Width="355" Height="300"/>
                             </center>
                         </div>
                         <div class="post-data">

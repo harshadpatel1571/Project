@@ -11,7 +11,7 @@
     <script src="../JS/angular.min.js"></script>
     <script src="../JS/NavigationCrtl.js"></script>
 
-     <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('body').bind('cut copy paste', function (e) {
@@ -22,6 +22,23 @@
             })
         })
     </script>
+
+    <style>
+        .iframe-container {
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9*/
+            position: relative;
+        }
+
+            .iframe-container iframe {
+                border: 0;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+    </style>
 
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
@@ -40,7 +57,7 @@
                             </div>
                         </div>
 
-                        <div class="post-thumb" ng-if="MainNews.nm_video_link  != NULL">
+                        <div class="post-thumb iframe-container" ng-if="MainNews.nm_video_link  != NULL">
                             <a>
                                 <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
                                 <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen></iframe>
@@ -51,7 +68,7 @@
                             <%--class="post-thumb" style="padding-left: 17.5%;"--%>
                             <center>
                                 <a>
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="500" Height="400" />
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="400" Height="400" />
                                 </a>
                             </center>
 
@@ -68,7 +85,7 @@
                             <a class="post-title text-primary">
                                 <h3 class="text-primary">{{MainNews.nm_head_line}}</h3>
                             </a>
-                            <div class="post-meta" style="overflow:scroll; height:250px;">
+                            <div class="post-meta" style="overflow: scroll; height: 250px;">
                                 <b>{{MainNews.nm_full_desc}} </b>
                             </div>
                         </div>
