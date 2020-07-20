@@ -6,12 +6,12 @@
 <head runat="server">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../JS/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
-    <script src="../JS/angular.min.js"></script>
-    <script src="../JS/NavigationCrtl.js"></script>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/NavigationCrtl.js"></script>
 
-    <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
+    <script src="JS/jquery/jquery-2.2.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('body').bind('cut copy paste', function (e) {
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <a class="post-title text-primary">
-                                <h3 class="text-primary">{{MainNews.nm_head_line}}</h3>
+                                <h5 class="text-primary">{{MainNews.nm_head_line}}</h5>
                             </a>
                             <div class="post-meta" style="overflow: scroll; height: 250px;">
                                 <b>{{MainNews.nm_full_desc}} </b>

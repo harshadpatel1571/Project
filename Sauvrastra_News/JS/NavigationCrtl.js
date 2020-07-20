@@ -7,7 +7,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
     $scope.getCategory = function () {
         var data = {};
-        $http.post("Home.aspx/firstPageData", { responseType: 'json' })
+        $http.post("index.aspx/firstPageData", { responseType: 'json' })
         .then(function (response) {
             $scope.getFirstData = angular.fromJson(response.data.d);
             $scope.category = $scope.getFirstData.Table1;
@@ -25,14 +25,14 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         var data = {
             Cat_ID: cat_ID
         };
-        $http.post("Home.aspx/GetNewsByCategory", data)
+        $http.post("index.aspx/GetNewsByCategory", data)
         .then(function (response) {
             $scope.News = angular.fromJson(response.data.d);
         });
     }
     $scope.OpenModel = function (datanews) {
         $uibModal.open({
-            templateUrl: '/Client-cp/News_Model.aspx',
+            templateUrl: '/News_Model.aspx',
             animation: 'am-flip-x',
             show: true,
             size: 'lg',

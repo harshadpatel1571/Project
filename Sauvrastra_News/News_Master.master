@@ -1,19 +1,27 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="client_mst.master.cs" Inherits="Client_cp_client_mst" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="News_Master.master.cs" Inherits="News_Master" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <link href="../JS/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/classy-nav.min.css" rel="stylesheet" />
+    <link href="css/custom-icon.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="css/nice-select.min.css" rel="stylesheet" />
+    <link href="css/owl.carousel.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 
     <title>saurashtra &nbsp; Mirror</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="iYWMnemGdf0dY_ACo6jmqL2nhykLrtjxlZHgmZJckF0" />
     <link rel="icon" href="../Admin-cp/img/buttons/Logo.png" />
+
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <form id="form1" runat="server" ng-init="getCategory()">
@@ -26,8 +34,8 @@
                                 <div class="top-header-content d-flex align-items-center justify-content-between">
 
                                     <div class="logo">
-                                        <a href="Home.aspx">
-                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/DesctopLogo.png" Height="100"/>
+                                        <a href="index.aspx">
+                                            <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/DesctopLogo.png" Height="80" />
                                         </a>
                                     </div>
 
@@ -51,8 +59,8 @@
                             <nav class="classy-navbar justify-content-between" id="newspaperNav">
 
                                 <div class="logo">
-                                    <a href="Home.aspx">
-                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/MobileLogo.png" Height="60"/></a>
+                                    <a href="index.aspx">
+                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/MobileLogo.png" Height="60" /></a>
                                 </div>
 
                                 <div class="classy-navbar-toggler">
@@ -66,7 +74,7 @@
 
                                     <div class="classynav">
                                         <ul>
-                                            <li class="active"><a href="Home.aspx" ng-click="getCategory()">{{homepage}}</a></li>
+                                            <li class="active"><a href="index.aspx" ng-click="getCategory()">{{homepage}}</a></li>
                                             <li ng-repeat="cat in category"><a href="#" ng-click="getNewsByCate(cat.id)">{{cat.name}}</a></li>
                                         </ul>
                                     </div>
@@ -103,15 +111,15 @@
                                     <ul>
 
                                         <li ng-if="TopAdd.length >= 1"><a href="{{TopAdd[0].add_link}}">
-                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[0].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                            <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{TopAdd[0].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                         <li ng-if="TopAdd.length >= 2"><a href="{{TopAdd[1].add_link}}">
-                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[1].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                            <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{TopAdd[1].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                         <li ng-if="TopAdd.length >= 3"><a href="{{TopAdd[2].add_link}}">
-                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[2].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                            <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{TopAdd[2].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                         <li ng-if="TopAdd.length >= 4"><a href="{{TopAdd[3].add_link}}">
-                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[3].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                            <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{TopAdd[3].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                         <li ng-if="TopAdd.length >= 5"><a href="{{TopAdd[4].add_link}}">
-                                            <asp:Image runat="server" ImageUrl="../Admin-cp/img/add_image/{{TopAdd[4].add_image}}" alt="" Width="364" Height="97" /></a></li>
+                                            <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{TopAdd[4].add_image}}" alt="" Width="364" Height="97" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -123,7 +131,6 @@
         </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
         <div>
@@ -200,7 +207,6 @@
                                         <li><a href="#">
                                             <img src="img/core-img/iphone.png" width="30" height="30" />
                                             &nbsp; iphone </a></li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -226,22 +232,21 @@
                     </div>
                 </div>
             </footer>
-         
-            <script src="../JS/angular.min.js"></script>
-            <script src="../JS/jquery.min.js"></script>
-            <script src="../JS/bootstrap.min.js"></script>
-            <script src="../JS/angular-animate.js"></script>
-            <script src="../JS/angular-sanitize.js"></script>
-            <script src="../JS/ui-bootstrap-tpls-2.5.0.js"></script>
-            <script src="../JS/NavigationCrtl.js"></script>
 
-            <script src="../JS/jquery/jquery-2.2.4.min.js"></script>
-            <%--<script src="js/bootstrap/bootstrap.min.js"></script>
-            <script src="js/bootstrap/popper.min.js"></script>--%>
-            <script src="../JS/plugins/plugins.js"></script>
-            <script src="../JS/active.js"></script>
+            <script src="JS/angular.min.js"></script>
+            <script src="JS/jquery.min.js"></script>
+            <script src="JS/bootstrap.min.js"></script>
+            <script src="JS/angular-animate.js"></script>
+            <script src="JS/angular-sanitize.js"></script>
+            <script src="JS/ui-bootstrap-tpls-2.5.0.js"></script>
+            <script src="JS/NavigationCrtl.js"></script>
+
+            <script src="JS/jquery/jquery-2.2.4.min.js"></script>
+            <script src="JS/plugins/plugins.js"></script>
+            <script src="JS/active.js"></script>
 
         </div>
     </form>
 </body>
+
 </html>
