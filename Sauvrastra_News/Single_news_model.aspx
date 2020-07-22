@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="News_Model.aspx.cs" Inherits="Client_cp_News_Model" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Single_news_model.aspx.cs" Inherits="Single_news_model" %>
 
 <!DOCTYPE html>
 
@@ -51,7 +51,7 @@
                     <div class="single-blog-post featured-post-2">
                         <div class="row">
                             <div class="col-3">
-                                <b class="fa fa-eye text-primary">&nbsp; {{MainNews.nm_views_count + 1}}</b>
+                                <b class="fa fa-eye text-primary">&nbsp; {{MainNews.nm_views_count}}</b>
                             </div>
                             <div class="col-5">
                                 <div class="logo">

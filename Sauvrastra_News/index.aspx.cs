@@ -31,4 +31,15 @@ public partial class index : System.Web.UI.Page
         outdata = JsonConvert.SerializeObject(dt_BranchWise);
         return outdata;
     }
+
+
+    // add me : harshad
+    [WebMethod]
+    public static string update_views(int old_view, int id)
+    {
+        string outdata = null;
+        int update_views = BAL_News.update_user_views(id, old_view);
+        outdata = JsonConvert.SerializeObject(update_views);
+        return outdata;
+    }
 }

@@ -77,4 +77,14 @@ public class BAL_Catagory
         DataSet ds = new DataSet();
         return ds = commands.DataExecuteQuery(cmd);
     }
+
+    // Update catagory index
+    public static int Update_menue_index(int id, int menue_index)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "update_menue_index_setting";
+        cmd.Parameters.AddWithValue("@id",id);
+        cmd.Parameters.AddWithValue("@menue_id",menue_index);
+        return commands.NonExecuteQuery(cmd);
+    }
 }

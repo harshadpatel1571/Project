@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section id="main-content">
-       
+
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -52,14 +52,14 @@
                                                 $('#<%=fromdate.ClientID %>').val(picker.startDate.format('YYYY-MM-DD'));
                                                 $('#<%=todate.ClientID %>').val(picker.endDate.format('YYYY-MM-DD'));
 
-                                                    });
+                                            });
 
-                                                    $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
-                                                        $(this).val('');
-                                                        $('#<%=fromdate.ClientID %>').val('');
-                                                    $('#<%=todate.ClientID %>').val('');
-                                                });
-                                                });
+                                            $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
+                                                $(this).val('');
+                                                $('#<%=fromdate.ClientID %>').val('');
+                                                        $('#<%=todate.ClientID %>').val('');
+                                                    });
+                                        });
                                     </script>
                                 </div>
                                 <asp:HiddenField ID="fromdate" runat="server" />
@@ -109,11 +109,11 @@
                                                 <asp:Label ID="lbl_cat" runat="server" Text='<%#Eval("cat_name") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                         <asp:TemplateField HeaderText="News Date" HeaderStyle-CssClass="col-sm-1">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lbl_date" runat="server" Text='<%#Eval("nm_date") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="News Date" HeaderStyle-CssClass="col-sm-1">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lbl_date" runat="server" Text='<%#Eval("nm_date") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Head Line" HeaderStyle-CssClass="col-sm-3">
                                             <ItemTemplate>
                                                 <asp:Label ID="lbl_head" runat="server" Text='<%#Eval("nm_head_line") %>'></asp:Label>
@@ -133,8 +133,9 @@
                                             <ItemTemplate>
                                                 <asp:ImageButton runat="server" ImageUrl='<%#Eval("nm_status") %>' Width="20" Height="20" CommandName="btn_Status" CommandArgument='<%#Eval("nm_id") %>' />
                                                 &nbsp; | &nbsp;
-                                <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("nm_id") %>' />
-                                                
+                                                <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Edit.png" Width="20" Height="20" CommandName="btn_Edit" CommandArgument='<%#Eval("nm_id") %>' />
+                                                &nbsp; | &nbsp;
+                                                <asp:ImageButton runat="server" ImageUrl="~/Admin-cp/img/buttons/Delete.png" Width="20" Height="20" CommandName="btn_Delete" CommandArgument='<%#Eval("nm_id") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

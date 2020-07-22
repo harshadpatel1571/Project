@@ -67,8 +67,8 @@
                                     <div class="col-lg-10">
                                         <asp:Label runat="server" Text="Add News" ID="lbl_title"></asp:Label>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <a href="List_News_Master.aspx" class="btn btn-default round">Manage News</a>
+                                    <div class="col-lg-2" style="text-align:right;">
+                                        <a href="List_News_Master.aspx" class="btn btn-primary round">Manage News</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,6 +96,17 @@
                                             <label id="lblHeadLine" class="label label-info"></label>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_title" SetFocusOnError="true"
                                             ErrorMessage="Enter New Title" CssClass="label label-danger">
+                                        </asp:RequiredFieldValidator>
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label for="cname" class="control-label col-lg-3"><b>City</b> <span class="required">*</span></label>
+                                        <div class="col-lg-5">
+                                            <asp:TextBox runat="server" ID="txt_city" CssClass="form-control"></asp:TextBox>
+                                            <label id="lblCity" class="label label-info"></label>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_city" SetFocusOnError="true"
+                                            ErrorMessage="Enter News City" CssClass="label label-danger">
                                         </asp:RequiredFieldValidator>
                                         </div>
                                     </div>

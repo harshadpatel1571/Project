@@ -25,8 +25,8 @@
                                     <div class="col-lg-10">
                                         <asp:Label runat="server" Text="Advertisement List" ID="lbl_title"></asp:Label>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <a href="Form_add.aspx" class="btn btn-default round">Add Advertisement</a>
+                                    <div class="col-lg-2" style="text-align:right;">
+                                        <a href="Form_add.aspx" class="btn btn-primary round">Add Advertisement</a>
                                     </div>
                                 </div>
                             </div>

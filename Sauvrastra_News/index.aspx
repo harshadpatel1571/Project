@@ -6,7 +6,30 @@
             opacity: 1;
             padding-top: 200px;
         }
+
+         /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 5px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ee002d;
+            border-radius: 5px;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #b30000;
+            }
     </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script src="JS/jquery/jquery-2.2.4.min.js"></script>
@@ -35,9 +58,9 @@
                                 <div class="col-4">
                                     <a class="post-catagory" ng-click="FetchNews(new)">{{new.cat_name}} </a>
                                 </div>
-                                <%-- <div class="col-4" style="text-align: inherit;">
-                                    <a class="post-catagory" ng-click="FetchNews(new)">Rajkot </a>
-                                </div>--%>
+                                <div class="col-4" style="text-align: inherit;">
+                                    <a class="post-catagory" ng-click="FetchNews(new)">{{new.nm_city}} </a>
+                                </div>
                                 <div class="col-4" style="text-align: right">
                                     <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{new.nm_date}}   </span></b>
                                 </div>
@@ -104,28 +127,29 @@
                         <div id="internationalTicker" class="ticker">
                             <ul>
                                 <li ng-if="FooterAdd.length >= 1">
-                                    <a href="{{FooterAdd[0].add_link}}">
+                                    <a href="{{FooterAdd[0].add_link}}" target="_blank">
                                         <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{FooterAdd[0].add_image}}" alt="" Width="1150" Height="150" /></a>
                                 </li>
                                 <li ng-if="FooterAdd.length >= 2">
-                                    <a href="{{FooterAdd[1].add_link}}">
+                                    <a href="{{FooterAdd[1].add_link}}" target="_blank">
                                         <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{FooterAdd[1].add_image}}" alt="" Width="1150" Height="150" /></a>
                                 </li>
                                 <li ng-if="FooterAdd.length >= 3">
-                                    <a href="{{FooterAdd[2].add_link}}">
+                                    <a href="{{FooterAdd[2].add_link}}" target="_blank">
                                         <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{FooterAdd[2].add_image}}" alt="" Width="1150" Height="150" /></a>
                                 </li>
                                 <li ng-if="FooterAdd.length >= 4">
-                                    <a href="{{FooterAdd[3].add_link}}">
+                                    <a href="{{FooterAdd[3].add_link}}" target="_blank">
                                         <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{FooterAdd[3].add_image}}" alt="" Width="1150" Height="150" /></a>
                                 </li>
                                 <li ng-if="FooterAdd.length >= 5">
-                                    <a href="{{FooterAdd[4].add_link}}">
+                                    <a href="{{FooterAdd[4].add_link}}" target="_blank">
                                         <asp:Image runat="server" ImageUrl="Admin-cp/img/add_image/{{FooterAdd[4].add_image}}" alt="" Width="1150" Height="150" /></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <br />
                     <br />
                     <br />
                     <br />

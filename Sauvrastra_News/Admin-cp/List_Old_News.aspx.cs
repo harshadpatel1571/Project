@@ -15,6 +15,7 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
         if (!IsPostBack)
         {
             this.check_session();
+            Session.Remove("update_news_id");
             fromdate.Value = "";
             todate.Value = "";
         }
@@ -72,6 +73,12 @@ public partial class Admin_cp_List_Old_News : System.Web.UI.Page
 
     protected void grd_old_news_RowCommand(object sender, GridViewCommandEventArgs e)
     {
+        if (e.CommandName == "btn_Edit")
+        {
+            Session["update_news_id"] = e.CommandArgument.ToString();
+            Response.Redirect("Form_News_Master.aspx");
+        }
+
         if (e.CommandName == "btn_Delete")
         {
             int delete = BAL_News.delete_status(Convert.ToInt32(e.CommandArgument), 1);

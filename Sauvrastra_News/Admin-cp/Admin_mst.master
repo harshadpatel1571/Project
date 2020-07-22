@@ -34,7 +34,7 @@
                     </div>
 
                     <!--logo start-->
-                    <a href="DashBoard.aspx" class="logo">Saurashtra Mirror <span class="lite">Admin</span></a>
+                    <a href="../index.aspx" class="logo" target="_blank">Saurashtra Mirror <span class="lite">Admin</span></a>
                     <!--logo end-->
 
                     <div class="top-nav notification-row">
@@ -297,7 +297,7 @@
                                     <span class="menu-arrow arrow_carrot-right"></span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a class="fa fa-circle-o-notch" href="#"> &nbsp; Manage Menu</a></li>
+                                    <li><a class="fa fa-circle-o-notch" href="Form_menue_setting.aspx"> &nbsp; Manage Menu</a></li>
                                 </ul>
                             </li>
                           <%--  <li class="">

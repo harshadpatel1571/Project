@@ -32,7 +32,7 @@ public class BAL_News
         return commands.ExecuteQuery(cmd);
     }
         
-    public static int Insert(int cat_id, string head_line,string short_desc, string full_desc,string links, int id)
+    public static int Insert(int cat_id, string head_line,string short_desc, string full_desc,string links,string city ,int id)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "insert_update_news";
@@ -41,6 +41,7 @@ public class BAL_News
         cmd.Parameters.AddWithValue("@short_desc",short_desc);
         cmd.Parameters.AddWithValue("@full_desc",full_desc);
         cmd.Parameters.AddWithValue("@link", links);
+        cmd.Parameters.AddWithValue("@city", city);
         cmd.Parameters.AddWithValue("@id",id);
         // bellow code for return data
         cmd.Parameters.Add("@ret_id", SqlDbType.Int);
@@ -132,6 +133,16 @@ public class BAL_News
         cmd.CommandText = "delete_status_add";
         cmd.Parameters.AddWithValue("@id", id);
         cmd.Parameters.AddWithValue("@query", query);
+        return commands.NonExecuteQuery(cmd);
+    }
+
+    // user view update
+    public static int update_user_views(int id, int oldview)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "update_user_views";
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@oldview", oldview);
         return commands.NonExecuteQuery(cmd);
     }
 

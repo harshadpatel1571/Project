@@ -25,8 +25,8 @@
                                     <div class="col-lg-10">
                                         <asp:Label runat="server" Text="News List" ID="lbl_title"></asp:Label>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <a href="Form_News_Master.aspx" class="btn btn-default round">Add News</a>
+                                    <div class="col-lg-2" style="text-align:right;">
+                                        <a href="Form_News_Master.aspx" class="btn btn-primary round">Add News</a>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,9 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Full Descriptions" HeaderStyle-CssClass="col-sm-6">
                                         <ItemTemplate>
-                                            <asp:Label ID="lbl_full" runat="server" Text='<%#Eval("nm_full_desc") %>'></asp:Label>
+                                            <div style="overflow:scroll; height:150px;">
+                                                <asp:Label ID="lbl_full" runat="server" Text='<%#Eval("nm_full_desc") %>'></asp:Label>
+                                            </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Image" HeaderStyle-CssClass="col-sm-2">

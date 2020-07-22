@@ -26,4 +26,15 @@ public class BAL_Admin
         DataTable dt = new DataTable();
         return dt = commands.ExecuteQuery(cmd);
     }
+
+    // for ip 
+    public static DataTable ip_check(int query, int nm_id, string ip)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "ip_test_proc";
+        cmd.Parameters.AddWithValue("@query", query);
+        cmd.Parameters.AddWithValue("@nm_id", nm_id);
+        cmd.Parameters.AddWithValue("@ip", ip);
+        return commands.ExecuteQuery(cmd);
+    }
 }
