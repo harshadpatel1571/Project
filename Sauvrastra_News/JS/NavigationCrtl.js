@@ -39,6 +39,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         $http.post("index.aspx/update_views", data, { responseType: 'json' })
         .then(function (response) {
+            //$scope.update_user_view = angular.fromJson(response.data.d);
         });
     };
     $scope.OpenModel = function (datanews) {

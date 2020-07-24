@@ -137,13 +137,15 @@ public class BAL_News
     }
 
     // user view update
-    public static int update_user_views(int id, int oldview)
+    public static int update_user_views(int id, int oldview, string user_ip)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.CommandText = "update_user_views";
-        cmd.Parameters.AddWithValue("@id", id);
-        cmd.Parameters.AddWithValue("@oldview", oldview);
-        return commands.NonExecuteQuery(cmd);
+        cmd.Parameters.AddWithValue("@news_id", id);
+        cmd.Parameters.AddWithValue("@old_view", oldview);
+        cmd.Parameters.AddWithValue("@user_ip",user_ip);
+        DataTable dt = commands.ExecuteQuery(cmd);
+        return Convert.ToInt32(dt.Rows[0]["total_view"].ToString());
     }
 
 }

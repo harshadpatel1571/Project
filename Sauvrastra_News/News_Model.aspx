@@ -51,7 +51,7 @@
                     <div class="single-blog-post featured-post-2">
                         <div class="row">
                             <div class="col-3">
-                                <b class="fa fa-eye text-primary">&nbsp; {{MainNews.nm_views_count + 1}}</b>
+                                <b class="fa fa-eye text-primary">&nbsp; {{Update_Views.nm_views_count + 1}}</b>
                             </div>
                             <div class="col-5">
                                 <div class="logo">

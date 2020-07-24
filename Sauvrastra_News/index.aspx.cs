@@ -14,6 +14,7 @@ public partial class index : System.Web.UI.Page
     {
 
     }
+
     [WebMethod]
     public static string firstPageData()
     {
@@ -32,13 +33,12 @@ public partial class index : System.Web.UI.Page
         return outdata;
     }
 
-
-    // add me : harshad
     [WebMethod]
     public static string update_views(int old_view, int id)
     {
         string outdata = null;
-        int update_views = BAL_News.update_user_views(id, old_view);
+        string user_ip = HttpContext.Current.Request.UserHostAddress.ToString();
+        int update_views = BAL_News.update_user_views(id, old_view,user_ip);
         outdata = JsonConvert.SerializeObject(update_views);
         return outdata;
     }
