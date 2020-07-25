@@ -61,23 +61,41 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         })
     }
-    //$scope.OpenModelSingleNews = function (datanews) {
-    //    $uibModal.open({
-    //        templateUrl: '/Single_news_model.aspx',
-    //        animation: 'am-flip-x',
-    //        show: true,
-    //        size: 'lg',
-    //        windowTopClass: 'modelsize90 am-flip-x',
-    //        controller: function ($scope, $uibModalInstance, $sce) {
-    //            $scope.MainNews = datanews;
-    //            animation: 'slide-in-up'
-    //            $scope.ok = function () {
-    //                $uibModalInstance.close();
-    //            }
-    //            $scope.trustSrc = function (src) {
-    //                return $sce.trustAsResourceUrl(src);
-    //            }
-    //        }
-    //    })
-    //}
+
+    $scope.OpenModelSingleNews = Function()
+    {
+        debugger
+        var getURL = window.location.pathname;
+        var url = 'http://www.mymainsite.com/?id=2';
+        var split = url.split('?')[1];
+        var id = parseInt(split.split('=')[1]);
+        $http.post("index.aspx/GetNewsByID", { nm_ID: id}, { responseType: 'json' })
+       .then(function (response) {
+           var SingleNews = angular.fromJson(response.data.d);
+           $scope.OpenModelSingleNews(SingleNews)
+       });
+
+        //console.log(pathname);
+    }
+    $scope.OpenModelSingleNews = function (datanews) {
+        $uibModal.open({
+            templateUrl: '/Single_news_model.aspx',
+            animation: 'am-flip-x',
+            show: true,
+            size: 'lg',
+            windowTopClass: 'modelsize90 am-flip-x',
+            controller: function ($scope, $uibModalInstance, $sce) {
+                debugger;
+                $scope.SingleNews = datanews;
+                animation: 'slide-in-up'
+                $scope.ok = function () {
+                    $uibModalInstance.close();
+                    window.location.href = "http://www.saurashtramirror.com";
+                }
+                $scope.trustSrc = function (src) {
+                    return $sce.trustAsResourceUrl(src);
+                }
+            }
+        })
+    }
 });

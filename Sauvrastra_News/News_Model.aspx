@@ -42,7 +42,7 @@
     </style>
 
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
+<body ng-app="myApp" ng-controller="navigationCtrl"><%-- ng-init="OnModalLoad()">--%>
     <br />
     <div class="featured-post-area" style="display: block; align-content: center">
         <div class="container">

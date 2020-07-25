@@ -42,4 +42,13 @@ public partial class index : System.Web.UI.Page
         outdata = JsonConvert.SerializeObject(update_views);
         return outdata;
     }
+
+    [WebMethod]
+    public static string GetNewsByID(int nm_ID)
+    {
+        string outdata;
+        DataTable dt_SingleNews = BAL_News.Get_NewsByID(nm_ID);
+        outdata = JsonConvert.SerializeObject(dt_SingleNews);
+        return outdata;
+    }
 }

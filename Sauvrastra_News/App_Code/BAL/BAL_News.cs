@@ -147,5 +147,11 @@ public class BAL_News
         DataTable dt = commands.ExecuteQuery(cmd);
         return Convert.ToInt32(dt.Rows[0]["total_view"].ToString());
     }
-
+    public static DataTable Get_NewsByID(int id)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Parameters.AddWithValue("@nm_id", id);
+        cmd.CommandText = "getNewsByID";
+        return commands.ExecuteQuery(cmd);
+    }
 }

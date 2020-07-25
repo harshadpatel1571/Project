@@ -42,7 +42,7 @@
     </style>
 
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
+<body><%-- ng-init="OpenModelSingleNews()">--%>
     <br />
     <div class="featured-post-area" style="display: block; align-content: center">
         <div class="container">
@@ -51,7 +51,7 @@
                     <div class="single-blog-post featured-post-2">
                         <div class="row">
                             <div class="col-3">
-                                <b class="fa fa-eye text-primary">&nbsp; {{MainNews.nm_views_count}}</b>
+                                <b class="fa fa-eye text-primary">&nbsp; {{SingleNews.nm_views_count}}</b>
                             </div>
                             <div class="col-5">
                                 <div class="logo">
@@ -64,18 +64,18 @@
                             </div>
                         </div>
 
-                        <div class="post-thumb iframe-container" ng-if="MainNews.nm_video_link  != NULL">
+                        <div class="post-thumb iframe-container" ng-if="SingleNews.nm_video_link  != NULL">
                             <a>
-                                <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
-                                <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen></iframe>
+                                <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(SingleNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
+                                <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(SingleNews.nm_video_link)}}" allowfullscreen></iframe>
                             </a>
                         </div>
 
-                        <div ng-if="MainNews.nm_video_link  == NULL">
+                        <div ng-if="SingleNews.nm_video_link  == NULL">
                             <%--class="post-thumb" style="padding-left: 17.5%;"--%>
                             <center>
                                 <a>
-                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="400" Height="400" />
+                                    <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{SingleNews.nm_image}}" alt="" Width="400" Height="400" />
                                 </a>
                             </center>
 
@@ -83,20 +83,20 @@
                         <div class="post-data">
                             <div class="row">
                                 <div class="col-4">
-                                    <a class="post-catagory">{{MainNews.cat_name}}</a>
+                                    <a class="post-catagory">{{SingleNews.cat_name}}</a>
                                 </div>
                                 <div class="col-4">
-                                    <a class="post-catagory">{{MainNews.nm_city}}</a>
+                                    <a class="post-catagory">{{SingleNews.nm_city}}</a>
                                 </div>
                                 <div class="col-4" style="text-align: right">
-                                    <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{MainNews.nm_date}}   </span></b>
+                                    <b class="text-danger"><span class="fa fa-calendar">&nbsp; {{SingleNews.nm_date}}   </span></b>
                                 </div>
                             </div>
                             <a class="post-title text-primary">
-                                <h5 class="text-primary">{{MainNews.nm_head_line}}</h5>
+                                <h5 class="text-primary">{{SingleNews.nm_head_line}}</h5>
                             </a>
                             <div class="post-meta" style="overflow-y: scroll; height: 250px;">
-                                <b>{{MainNews.nm_full_desc}} </b>
+                                <b>{{SingleNews.nm_full_desc}} </b>
                             </div>
                         </div>
                     </div>
