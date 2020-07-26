@@ -51,7 +51,7 @@
     </style>
     <title></title>
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OnModalLoad()">
+<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OpenModelSingleNews()">
     <form id="form1" runat="server">
     <div>
     

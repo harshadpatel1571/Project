@@ -64,7 +64,7 @@
                             </div>
                         </div>
 
-                        <div class="post-thumb iframe-container" ng-if="SingleNews.nm_video_link  != NULL">
+                        <div class="post-thumrb iframe-container" ng-if="SingleNews.nm_video_link  != NULL">
                             <a>
                                 <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(SingleNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
                                 <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(SingleNews.nm_video_link)}}" allowfullscreen></iframe>

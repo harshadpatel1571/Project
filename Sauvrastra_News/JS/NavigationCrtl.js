@@ -43,6 +43,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         });
     };
     $scope.OpenModel = function (datanews) {
+        //alert("open model function");
         $uibModal.open({
             templateUrl: '/News_Model.aspx',
             animation: 'am-flip-x',
@@ -64,20 +65,21 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
     $scope.OpenModelSingleNews = Function()
     {
-        debugger
+        //debugger
         var getURL = window.location.pathname;
         var url = 'http://www.mymainsite.com/?id=2';
         var split = url.split('?')[1];
         var id = parseInt(split.split('=')[1]);
         $http.post("index.aspx/GetNewsByID", { nm_ID: id}, { responseType: 'json' })
        .then(function (response) {
+           //debugger
            var SingleNews = angular.fromJson(response.data.d);
-           $scope.OpenModelSingleNews(SingleNews)
+           $scope.OpenSingleModel(SingleNews)
+           console.log(SingleNews);
        });
-
-        //console.log(pathname);
+        
     }
-    $scope.OpenModelSingleNews = function (datanews) {
+    $scope.OpenSingleModel = function (datanews) {
         $uibModal.open({
             templateUrl: '/Single_news_model.aspx',
             animation: 'am-flip-x',
@@ -85,8 +87,8 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             size: 'lg',
             windowTopClass: 'modelsize90 am-flip-x',
             controller: function ($scope, $uibModalInstance, $sce) {
-                debugger;
-                $scope.SingleNews = datanews;
+                //debugger;
+                $scope.SingleNews = datanews[0];
                 animation: 'slide-in-up'
                 $scope.ok = function () {
                     $uibModalInstance.close();
