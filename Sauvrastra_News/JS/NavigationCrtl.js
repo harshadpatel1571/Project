@@ -61,10 +61,11 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         })
     }
-
-    $scope.OpenModelSingleNews = Function()
+ 
+    
+    $scope.OpenModelSingleNews = function ()
     {
-        //debugger
+        debugger;
         var getURL = window.location.pathname;
         var url = window.location.href;
         var split = url.split('?')[1];
