@@ -43,7 +43,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         });
     };
     $scope.OpenModel = function (datanews) {
-        //alert("open model function");
         $uibModal.open({
             templateUrl: '/News_Model.aspx',
             animation: 'am-flip-x',
@@ -67,15 +66,14 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     {
         //debugger
         var getURL = window.location.pathname;
-        var url = 'http://www.mymainsite.com/?id=2';
+        var url = window.location.href;
         var split = url.split('?')[1];
         var id = parseInt(split.split('=')[1]);
         $http.post("index.aspx/GetNewsByID", { nm_ID: id}, { responseType: 'json' })
        .then(function (response) {
            //debugger
            var SingleNews = angular.fromJson(response.data.d);
-           $scope.OpenSingleModel(SingleNews)
-           console.log(SingleNews);
+           $scope.OpenSingleModel(SingleNews);
        });
         
     }
@@ -93,6 +91,10 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
                 $scope.ok = function () {
                     $uibModalInstance.close();
                     window.location.href = "http://www.saurashtramirror.com";
+                }
+                $scope.copyLink = function () {
+                    angular.copy(datanews[0]);
+                    alert("okk");
                 }
                 $scope.trustSrc = function (src) {
                     return $sce.trustAsResourceUrl(src);

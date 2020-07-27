@@ -23,8 +23,7 @@
             })
         })
     </script>
-
-    <style>
+    <style type="text/css">
         .iframe-container {
             overflow: hidden;
             padding-top: 56.25%; /* 16:9*/
@@ -39,10 +38,58 @@
                 top: 0;
                 width: 100%;
             }
+
+        /* Large desktop */
+        @media (min-width: 1200px) {
+            #div_mobile {
+                display: none;
+                visibility: hidden;
+            }
+
+            #div_desctop {
+                visibility: visible;
+            }
+        }
+
+        /* Portrait tablet to landscape and desktop */
+        @media (min-width: 768px) and (max-width: 979px) {
+            #div_mobile {
+                visibility: hidden;
+                display: none;
+            }
+
+            #div_desctop {
+                visibility: visible;
+            }
+        }
+
+        /* Landscape phone to portrait tablet */
+        @media (max-width: 767px) {
+            #div_mobile {
+                visibility: visible;
+            }
+
+            #div_desctop {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        /* Landscape phones and down */
+        @media (max-width: 480px) {
+            #div_mobile {
+                visibility: visible;
+            }
+
+            #div_desctop {
+                display: none;
+                visibility: hidden;
+            }
+        }
     </style>
 
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl"><%-- ng-init="OnModalLoad()">--%>
+<body ng-app="myApp" ng-controller="navigationCtrl">
     <br />
     <div class="featured-post-area" style="display: block; align-content: center">
         <div class="container">
@@ -59,20 +106,23 @@
                                 </div>
                             </div>
                             <div class="col-4" style="text-align: right;">
-                                <label class="fa fa-copy bg-danger btn rounded text-white" id="btnShare" ng-click="ok()"></label>
+                                <a href="whatsapp://send?text=http://localhost:50444/news.aspx?id={{MainNews.nm_id}}" data-action="share/whatsapp/share" id="div_mobile" target="_blank">
+                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white">M</label>
+                                </a>
+                                <a href="https://web.whatsapp.com/send?text=http://localhost:50444/News.aspx?id={{MainNews.nm_id}}" data-action="share/whatsapp/share" id="div_desctop" target="_blank">
+                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white">D</label>
+                                </a>
                                 <label class="fa fa-close bg-danger btn rounded text-white" id="btnClose" ng-click="ok()"></label>
                             </div>
                         </div>
 
                         <div class="post-thumb iframe-container" ng-if="MainNews.nm_video_link  != NULL">
                             <a>
-                                <%--<iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen frameborder="0">--%>
                                 <iframe width="770" height="400" class="youtube-player" ng-src="{{trustSrc(MainNews.nm_video_link)}}" allowfullscreen></iframe>
                             </a>
                         </div>
 
                         <div ng-if="MainNews.nm_video_link  == NULL">
-                            <%--class="post-thumb" style="padding-left: 17.5%;"--%>
                             <center>
                                 <a>
                                     <asp:Image runat="server" ImageUrl="../Admin-cp/img/news_image/{{MainNews.nm_image}}" alt="" Width="400" Height="400" />
