@@ -19,8 +19,8 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     }
     $scope.FetchNews = function (news) {
         var News = news;
-        $scope.OpenModel(News);
-        $scope.Update_Views(News.nm_views_count,News.nm_id);
+        //$scope.OpenModel(News);
+        $scope.Update_Views(News.nm_views_count, News.nm_id, news);
     }
     $scope.getNewsByCate = function (cat_ID) {
         var data = {
@@ -28,21 +28,25 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         };
         $http.post("index.aspx/GetNewsByCategory", data)
         .then(function (response) {
+
             $scope.News = angular.fromJson(response.data.d);
+
         });
     }
 
-    $scope.Update_Views = function (view_count, news_id) {
+    $scope.Update_Views = function (view_count, news_id, News) {
         var data = {
             'old_view': view_count,
             'id': news_id
             }
         $http.post("index.aspx/update_views", data, { responseType: 'json' })
         .then(function (response) {
-            //$scope.update_user_view = angular.fromJson(response.data.d);
+            debugger;
+            var update_user_view = angular.fromJson(response.data.d);
+            $scope.OpenModel(News, update_user_view);
         });
     };
-    $scope.OpenModel = function (datanews) {
+    $scope.OpenModel = function (datanews, update_user_view) {
         $uibModal.open({
             templateUrl: '/News_Model.aspx',
             animation: 'am-flip-x',
@@ -51,6 +55,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             windowTopClass: 'modelsize90 am-flip-x',
             controller: function ($scope, $uibModalInstance, $sce) {
                 $scope.MainNews = datanews;
+                $scope.update_user_view = update_user_view;
                 animation: 'slide-in-up'
                 $scope.ok = function () {
                     $uibModalInstance.close();
@@ -83,6 +88,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             templateUrl: '/Single_news_model.aspx',
             animation: 'am-flip-x',
             show: true,
+            backdrop: 'static',
             size: 'lg',
             windowTopClass: 'modelsize90 am-flip-x',
             controller: function ($scope, $uibModalInstance, $sce) {
