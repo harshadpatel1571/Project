@@ -48,14 +48,43 @@
                 top: 0;
                 width: 100%;
             }
+
+            #myClass {
+    background: linear-gradient(65deg, #b00a2d, #a30743, #6c0a99, #b606a7, #8c055d);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 7s ease infinite;
+    -moz-animation: AnimationName 7s ease infinite;
+    -o-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
     </style>
     <title></title>
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OpenModelSingleNews()">
-    <form id="form1" runat="server">
-    <div>
-    
+<body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OpenModelSingleNews()" class="css-selector">
+    <div id="myClass">
+
     </div>
-    </form>
 </body>
 </html>

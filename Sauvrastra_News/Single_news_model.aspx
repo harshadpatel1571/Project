@@ -103,7 +103,9 @@
                             </div>
                             <div class="col-5">
                                 <div class="logo">
-                                    <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/DesctopLogo.png" Height="40" />
+                                    <center>
+                                        <asp:Image runat="server" ImageUrl="~/Admin-cp/img/buttons/DesctopLogo.png" Height="40" />
+                                    </center>
                                 </div>
                             </div>
                             <div class="col-4" style="text-align: right;">

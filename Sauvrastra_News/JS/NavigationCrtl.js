@@ -19,7 +19,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
     }
     $scope.FetchNews = function (news) {
         var News = news;
-        //$scope.OpenModel(News);
         $scope.Update_Views(News.nm_views_count, News.nm_id, news);
     }
     $scope.getNewsByCate = function (cat_ID) {
@@ -38,10 +37,9 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         var data = {
             'old_view': view_count,
             'id': news_id
-            }
+        }
         $http.post("index.aspx/update_views", data, { responseType: 'json' })
         .then(function (response) {
-            debugger;
             var update_user_view = angular.fromJson(response.data.d);
             $scope.OpenModel(News, update_user_view);
         });
@@ -66,22 +64,18 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         })
     }
- 
-    
-    $scope.OpenModelSingleNews = function ()
-    {
-        debugger;
+
+    $scope.OpenModelSingleNews = function () {
         var getURL = window.location.pathname;
         var url = window.location.href;
         var split = url.split('?')[1];
         var id = parseInt(split.split('=')[1]);
-        $http.post("index.aspx/GetNewsByID", { nm_ID: id}, { responseType: 'json' })
+        $http.post("index.aspx/GetNewsByID", { nm_ID: id }, { responseType: 'json' })
        .then(function (response) {
-           //debugger
            var SingleNews = angular.fromJson(response.data.d);
            $scope.OpenSingleModel(SingleNews);
        });
-        
+
     }
     $scope.OpenSingleModel = function (datanews) {
         $uibModal.open({
@@ -92,7 +86,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             size: 'lg',
             windowTopClass: 'modelsize90 am-flip-x',
             controller: function ($scope, $uibModalInstance, $sce) {
-                //debugger;
                 $scope.SingleNews = datanews[0];
                 animation: 'slide-in-up'
                 $scope.ok = function () {
@@ -101,7 +94,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
                 }
                 $scope.copyLink = function () {
                     angular.copy(datanews[0]);
-                    alert("okk");
                 }
                 $scope.trustSrc = function (src) {
                     return $sce.trustAsResourceUrl(src);
