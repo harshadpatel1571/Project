@@ -1,4 +1,8 @@
 ﻿var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+app.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https):/);
+}])
 app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
     $scope.homepage = 'મુખ્ય પાનું';
@@ -27,9 +31,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
         };
         $http.post("index.aspx/GetNewsByCategory", data)
         .then(function (response) {
-
             $scope.News = angular.fromJson(response.data.d);
-
         });
     }
 
@@ -75,7 +77,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
            var SingleNews = angular.fromJson(response.data.d);
            $scope.OpenSingleModel(SingleNews);
        });
-
     }
     $scope.OpenSingleModel = function (datanews) {
         $uibModal.open({
@@ -91,9 +92,6 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
                 $scope.ok = function () {
                     $uibModalInstance.close();
                     window.location.href = "http://www.saurashtramirror.com";
-                }
-                $scope.copyLink = function () {
-                    angular.copy(datanews[0]);
                 }
                 $scope.trustSrc = function (src) {
                     return $sce.trustAsResourceUrl(src);
