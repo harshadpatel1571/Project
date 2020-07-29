@@ -1,8 +1,9 @@
 ﻿var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.config(['$compileProvider', function ($compileProvider) {
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https):/);
+    //$compileProvider.aHrefSanitizationWhitelist([/^\s*(whatsapp):/]);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|whatsapp|https):/);
 }])
+
 app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
 
     $scope.homepage = 'મુખ્ય પાનું';
