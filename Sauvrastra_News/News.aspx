@@ -10,7 +10,14 @@
             padding-top: 200px;
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="description" content="Darek palna sachot samachar stay conected with us." />
+	<meta property="og:title" content="દરેક પળનાં સચોટ સમાચાર - સૌરાષ્ટ્ર મિરર" />
+	<meta property="og:url" content="http://www.saurashtramirror.com/News.aspx?id=" />
+	<meta property="og:description" content="જાણો દરેક પળનાં સચોટ સમાચાર ગુજરાતીમાં અને જોડાયેલા રહો સૌરાષ્ટ્ર મિરર ન્યુઝ સાથે" />
+	<meta property="og:image" content="http://www.saurashtramirror.com/img/core-img/sm_web_logo.jpg" />
+
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="JS/angular.min.js"></script>
@@ -83,6 +90,7 @@
     <title></title>
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl" ng-init="OpenModelSingleNews()" class="css-selector">
+
     <div id="myClass">
 
     </div>

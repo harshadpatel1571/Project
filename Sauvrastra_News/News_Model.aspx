@@ -6,6 +6,7 @@
 <head runat="server">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="JS/angular.min.js"></script>
@@ -108,11 +109,11 @@
                                 </div>
                             </div>
                             <div class="col-4" style="text-align: right;">
-                                <a href="whatsapp://send?text=http://saurashtramirror.com/news.aspx?id={{MainNews.nm_id}}"  data-action="share/whatsapp/share" id="div_mobile" target="_blank">
-                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white"></label>
+                                <a href="whatsapp://send?text=http://saurashtramirror.com/news.aspx?id={{MainNews.nm_id}}" data-action="share/whatsapp/share" id="div_mobile" target="_blank">
+                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white">M</label>
                                 </a>
                                 <a href="https://web.whatsapp.com/send?text=http://saurashtramirror.com/news.aspx?id={{MainNews.nm_id}}" data-action="share/whatsapp/share" id="div_desctop" target="_blank">
-                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white"></label>
+                                    <label class="fa fa-whatsapp bg-danger btn rounded text-white">D</label>
                                 </a>
                                 <label class="fa fa-close bg-danger btn rounded text-white" id="btnClose" ng-click="ok()"></label>
                             </div>

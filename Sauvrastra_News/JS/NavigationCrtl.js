@@ -77,6 +77,7 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
        .then(function (response) {
            var SingleNews = angular.fromJson(response.data.d);
            $scope.OpenSingleModel(SingleNews);
+           //return $scope.img = SingleNews;
        });
     }
     $scope.OpenSingleModel = function (datanews) {
@@ -100,4 +101,5 @@ app.controller('navigationCtrl', function ($scope, $http, $uibModal) {
             }
         })
     }
+
 });
