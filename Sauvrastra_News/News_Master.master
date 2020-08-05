@@ -29,6 +29,16 @@
 
     <link rel="icon" href="img/core-img/sm_footer_logo.png" />
 
+    <!-- Global site tag (gtag.js) - Google Analytics >
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174517190-1"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-174517190-1');
+    </script-->
+
 </head>
 <body ng-app="myApp" ng-controller="navigationCtrl">
     <form id="form1" runat="server" ng-init="getCategory()">
