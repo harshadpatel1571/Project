@@ -2,11 +2,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html  ng-app="myApp" ng-controller="navigationCtrl">
 <head runat="server">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <meta name="description" content={{MainNews.cat_name}} />
+	<meta property="og:title" content="દરેક પળનાં સચોટ સમાચાર - સૌરાષ્ટ્ર મિરર" />
+	<meta property="og:url" content="http://localhost:49737/News.aspx?id=" />
+	<meta property="og:description" content={{MainNews.cat_name}} />
+	<meta property="og:image" content="http://localhost:49737/img/core-img/sm_web_logo.jpg" />
+
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="JS/angular.min.js"></script>
@@ -90,7 +96,7 @@
     </style>
 
 </head>
-<body ng-app="myApp" ng-controller="navigationCtrl">
+<body>
     <br />
     <div class="featured-post-area" style="display: block; align-content: center">
         <div class="container">

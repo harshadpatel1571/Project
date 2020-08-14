@@ -298,6 +298,7 @@
                                 </a>
                                 <ul class="sub">
                                     <li><a class="fa fa-circle-o-notch" href="Form_menue_setting.aspx"> &nbsp; Manage Menu</a></li>
+                                    <li><a class="fa fa-circle-o-notch" href="Form_manage_views.aspx"> &nbsp; Manage Views</a></li>
                                 </ul>
                             </li>
                           <%--  <li class="">

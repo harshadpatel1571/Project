@@ -154,4 +154,15 @@ public class BAL_News
         cmd.CommandText = "getNewsByID";
         return commands.ExecuteQuery(cmd);
     }
+
+    // fake user views
+    public static DataTable Get_data_for_fakeview(int query,int id, int view)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Parameters.AddWithValue("@query", query);
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@view", view);
+        cmd.CommandText = "fake_view_data";
+        return commands.ExecuteQuery(cmd);
+    }
 }
