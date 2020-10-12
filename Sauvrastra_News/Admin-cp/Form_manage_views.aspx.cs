@@ -102,7 +102,7 @@ public partial class Admin_cp_Form_manage_views : System.Web.UI.Page
                         
                     }
                 }
-                //Response.Redirect("Form_manage_views.aspx");
+                Response.Redirect("Form_manage_views.aspx");
             }
         }
     }

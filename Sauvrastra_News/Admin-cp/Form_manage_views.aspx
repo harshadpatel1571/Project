@@ -63,12 +63,12 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Head Lines" HeaderStyle-CssClass="col-sm-7">
                                             <ItemTemplate>
-                                                <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("nm_head_line") %>'></asp:Label>
+                                                <asp:Label ID="lbl_headline" runat="server" Text='<%#Eval("nm_head_line") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                          <asp:TemplateField HeaderText="Origional Views" HeaderStyle-CssClass="col-sm-1">
                                             <ItemTemplate>
-                                                <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("nm_views_count") %>'></asp:Label>
+                                                <asp:Label ID="lbl_origional" runat="server" Text='<%#Eval("nm_views_count") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="View Edit" HeaderStyle-CssClass="col-sm-1">
